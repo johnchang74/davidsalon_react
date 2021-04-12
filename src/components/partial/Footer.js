@@ -22,12 +22,12 @@ class Footer extends Component{
                             <hr/>
                             <ul class="list-info-w3pvt last-w3ls-contact mt-lg-4">
                                 <li>
-                                    <p> Monday 11:00 am - 7:00 pm</p>
-                                    <p> Tuesday 11:00 am - 7:00 pm</p>
-                                    <p> Wednesday 11:00 am - 7:00 pm</p>
-                                    <p> Thursday 11:00 am - 7:00 pm</p>
-                                    <p> Friday 11:00 am - 8:00 pm</p>
-                                    <p> Saturday 11:00 am - 7:00 pm</p>
+                                    <p> Monday 11:00 am - 6:00 pm</p>
+                                    <p> Tuesday 11:00 am - 6:00 pm</p>
+                                    <p> Wednesday 11:00 am - 6:00 pm</p>
+                                    <p> Thursday 11:00 am - 6:00 pm</p>
+                                    <p> Friday 11:00 am - 7:00 pm</p>
+                                    <p> Saturday 11:00 am - 6:00 pm</p>
                                     <p> Sunday 1:00 pm - 6:00 pm</p>
                                     <p> Only by appointment</p>
                                 </li>

@@ -111,7 +111,11 @@ class Contact extends Component{
                 <section class="content-info py-5">
                     <div class="container py-md-5">
                         <div class="text-center px-lg-5">
-                            <h3 class="heading text-center mb-3 mb-sm-5">David Kim Salon de Beauté</h3>
+                            <h4 class="heading text-center mb-3 mb-sm-5">
+                                <p>No walk-in please. All of our services are provided by appointment ONLY.</p>
+                                <p>For <a href="https://www.wish.com/local">Wish</a> pickup customers, please kindly pick up your package only 
+                                from Monday to Wednesday between 11AM and 2PM. Please comply with COVID-19 rules for any visit.</p>
+                            </h4>
                         </div>
                         <div class="contact-w3pvt-form mt-5">
                             <form action="#" class="w3layouts-contact-fm" method="post" onSubmit={this.onSubmit}>
