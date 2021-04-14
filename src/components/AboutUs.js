@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { Container, Row, Col } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import { Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class AboutUs extends Component {
     componentDidMount() {
@@ -27,10 +27,11 @@ class AboutUs extends Component {
                                     <img src="/assets/images/david_kim_business_card.png" alt="aegis" class="dk_business_card" />
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img">
-                                    <h3 class="owner">Owner & Hair Stylist, David Kim</h3>
+                                    <h3 class="owner">Hair Stylist David Kim</h3>
                                     <div class="owner_bio">
-                                        <p>David Kim is the owner and the lead hair stylist at David Kim Salon de Beauté.
-                                        </p>
+                                        <Row><p>David Kim is an OCT licensed hairstylist,</p></Row> 
+                                        <Row><p>Aveda Colourist/Ambassador,</p></Row>
+                                        <Row><p>owner of David Kim Salon de Beauté.</p></Row>
                                     </div>
                                 </div>
                             </div>

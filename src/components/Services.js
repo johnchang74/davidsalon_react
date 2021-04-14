@@ -526,7 +526,7 @@ class Services extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6  mb-lg-0 mb-5">
+                            <div class="col-lg-6  mb-sm-0 mb-5">
                                 <div class="serv-name">
                                 </div>
                             </div>

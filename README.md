@@ -1,4 +1,5 @@
-Deployment steps:
+Project Console: https://console.firebase.google.com/project/david-kim-aveda-salon/overview
+Hosting URL: https://david-kim-aveda-salon.web.app
 root@grace-ThinkPad-T431s:/opt/davidsalon_react# firebase init
 
      ######## #### ########  ######## ########     ###     ######  ########
@@ -16,8 +17,8 @@ Before we get started, keep in mind:
   * You are currently outside your home directory
   * You are initializing in an existing Firebase project directory
 
-? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm your choices. Hosting: Configure
- and deploy Firebase Hosting sites
+? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm y
+our choices. Hosting: Configure and deploy Firebase Hosting sites
 
 === Project Setup
 
@@ -34,12 +35,10 @@ will contain Hosting assets to be uploaded with firebase deploy. If you
 have a build process for your assets, use your build's output directory.
 
 ? What do you want to use as your public directory? build
-? Configure as a single-page app (rewrite all urls to /index.html)? No
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
 ? Set up automatic builds and deploys with GitHub? No
-? File build/404.html already exists. Overwrite? No
-i  Skipping write of build/404.html
-? File build/index.html already exists. Overwrite? No
-i  Skipping write of build/index.html
+? File build/index.html already exists. Overwrite? Yes
+✔  Wrote build/index.html
 
 i  Writing configuration info to firebase.json...
 i  Writing project information to .firebaserc...
@@ -55,8 +54,8 @@ Compiled successfully.
 
 File sizes after gzip:
 
-  48.74 KB  build/static/js/2.8f18989d.chunk.js
-  4.9 KB    build/static/js/main.f279361f.chunk.js
+  56.26 KB  build/static/js/2.35e87f9c.chunk.js
+  5.12 KB   build/static/js/main.1c3054a9.chunk.js
   772 B     build/static/js/runtime-main.83c3e0c4.js
   278 B     build/static/css/main.5ecd60fb.chunk.css
 
@@ -73,15 +72,13 @@ Find out more about deployment here:
 
   bit.ly/CRA-deploy
 
-root@grace-ThinkPad-T431s:/opt/davidsalon_react# frebase deploy
-frebase: command not found
 root@grace-ThinkPad-T431s:/opt/davidsalon_react# firebase deploy
 
 === Deploying to 'david-kim-aveda-salon'...
 
 i  deploying hosting
 i  hosting[david-kim-aveda-salon]: beginning deploy...
-i  hosting[david-kim-aveda-salon]: found 47 files in build
+i  hosting[david-kim-aveda-salon]: found 50 files in build
 ✔  hosting[david-kim-aveda-salon]: file upload complete
 i  hosting[david-kim-aveda-salon]: finalizing version...
 ✔  hosting[david-kim-aveda-salon]: version finalized
@@ -89,6 +86,3 @@ i  hosting[david-kim-aveda-salon]: releasing new version...
 ✔  hosting[david-kim-aveda-salon]: release complete
 
 ✔  Deploy complete!
-
-Project Console: https://console.firebase.google.com/project/david-kim-aveda-salon/overview
-Hosting URL: https://david-kim-aveda-salon.web.app
