@@ -598,6 +598,17 @@ pre code {
   margin-left: auto;
 }
 
+.topbar_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: -25px;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1305,13 +1316,14 @@ pre code {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
-    padding-left: 14em;
+    padding-left: 10em;
   }
   .col-lg-4 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 29%;
     flex: 0 0 29%;
-    max-width: 29%;
+    max-width: 30%;
+    padding-left: 1em;
   }
   .col-lg-5 {
     -webkit-box-flex: 0;

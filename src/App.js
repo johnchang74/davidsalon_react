@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'; 
 import Home from './components/Home';
-import Navbar from './components/partial/Navbar';
+import Topbar from './components/partial/Topbar';
 import Footer from './components/partial/Footer';
 // import About from './components/About';
 import Services from './components/Services';
@@ -9,6 +9,7 @@ import Services from './components/Services';
 // import Gallery from './components/Gallery';
 import Products from './components/Products';
 import Contact from './components/Contact';
+import AboutUs from './components/AboutUs';
 
 
 function App() {
@@ -16,9 +17,10 @@ function App() {
     <div>
       
       <Router>
-        <Navbar/>
+        <Topbar/>
           <Switch>
             <Route exact path='/'component={Home}/>
+            <Route path='/aboutus' component={AboutUs}/>
             <Route path='/services' component={Services}/>
             <Route path='/products' component={Products}/>
             <Route path='/contact' component={Contact}/>
