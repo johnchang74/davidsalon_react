@@ -35,7 +35,7 @@ class Topbar extends Component{
 						<Navbar.Brand href="/">
 							<img
 								src="/assets/images/david_salon_logo1_v1.jpg"
-								width="130px"
+								width="140px"
 								height="50px"
 								className="d-inline-block align-top"
 								alt=" "/>
@@ -43,8 +43,8 @@ class Topbar extends Component{
 						<Navbar.Brand href="/"> */}
 							<img
 								src="/assets/images/aveda_logo_black_v1.jpg"
-								width="130px"
-								height="50px"
+								width="100px"
+								height="30px"
 								className="d-inline-block align-top"
 								alt=" "/>
 						{/* </Navbar.Brand>

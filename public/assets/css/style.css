@@ -1655,18 +1655,27 @@ div.prod-name {
     padding-top: 3em;
 }
 
-div.owner {
-    font-style: normal;
+img.dk_business_card {
+    width: 100%;
+    height: 100%;
+}
+
+h3.owner {
+    /* font-style: normal;
     font-size: 16px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    padding-top: 3em;
+    text-align: center; */
+    padding-top: 0.5em;
+    /* padding-bottom: 1em; */
+    /* padding-left: 0.5em;
+    padding-right: 2px; */
+    width: 350px;
 }
 
 div.owner_bio {
-    text-align: left;
-    padding-left: 30px;
-    padding-top: 90px;
+    /* text-align: left; */
+    padding-top: 20px;
+    width: 450px;
 }
 
 div.hair-colour {
