@@ -153,6 +153,40 @@ ul.banner_slide_bg {
     background-size: contain;
 }
 
+div.img_box_container {
+    display: flex;
+    justify-content: center;
+    color: black;
+    width: 100%;
+}
+
+div.img_box {
+    background: black;
+    width: 33.33%;
+}
+
+@media screen and (min-width: 425px) {
+    img.landing-image1, img.landing-image2, img.landing-image3 {
+        height: 480px;
+        background-size: contain;
+    }
+}
+
+/* img.landing-image1 {
+    height: 480px;
+    background-size: contain;
+}
+
+img.landing-image2 {
+    height: 480px;
+    background-size: contain;
+}
+
+img.landing-image3 {
+    height: 480px;
+    background-size: contain;
+} */
+
 /* //text slider */
 
 .bs-slider-overlay {
@@ -1673,9 +1707,10 @@ h3.owner {
 }
 
 div.owner_bio {
-    /* text-align: left; */
+    text-align: left;
     padding-top: 20px;
-    width: 450px;
+    padding-left: 20px;
+    width: 350px;
 }
 
 div.hair-colour {

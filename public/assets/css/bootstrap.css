@@ -609,6 +609,14 @@ pre code {
   margin-bottom: -25px;
 }
 
+.color-nav {
+  background-color: black;
+}
+
+.log-nav {
+  object-position: right;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;

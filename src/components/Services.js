@@ -18,7 +18,7 @@ class Services extends Component {
                 </div>
                 <section class="pricing py-5">
                     <div class="container py-md-5">
-                        <h3 class="heading text-capitalize text-center mb-3 mb-sm-5"> Salon Services</h3>
+                        <h3 class="heading text-capitalize text-center mb-3 mb-sm-5">SALON SERVICES</h3>
                         <div class="row pricing-grids">
                             <div class="col-lg-6  mb-lg-0 mb-5">
                                 <div class="padding">
@@ -526,8 +526,9 @@ class Services extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6  mb-sm-0 mb-5">
-                                <div class="serv-name">
+                            <div class="col-lg-6  mb-lg-0 mb-5">
+                                <div class="padding">
+                                    <img src="/assets/images/inst_4_faces_v1.jpg"></img>
                                 </div>
                             </div>
                         </div>
@@ -580,8 +581,11 @@ class Services extends Component {
                                             </div> */}
                                         </div>
                                     </div>
-                                </div>
-                                <div class="serv-nature">
+                                    <div class="menu-item">
+                                        <div class="row border-dot no-gutters">
+                                            <img src="/assets/images/aveda_pure_pro_spa.jpg"></img>            
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-6  mb-lg-0 mb-5">
