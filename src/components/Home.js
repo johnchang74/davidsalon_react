@@ -10,13 +10,13 @@ class Home extends Component {
             <div>
 				<div class="img_box_container" id="home">
 					<div class="img_box">
-						<img class="landing-image1" src="/assets/images/invanti_aveda_product_v1.jpg"></img>
+						<img class="landing-image1" src="/assets/images/invanti_aveda_product_v1.jpg" alt=" "></img>
 					</div>
 					<div class="img_box">
-						<img class="landing-image2" src="/assets/images/aveda_poster.jpg"></img>
+						<img class="landing-image2" src="/assets/images/aveda_poster.jpg" alt=" "></img>
 					</div>
 					<div class="img_box">
-						<img class="landing-image3" src="/assets/images/inst_aveda_deco_v1.jpg"></img>
+						<img class="landing-image3" src="/assets/images/inst_aveda_deco_v1.jpg" alt=" "></img>
 					</div>
 					{/* <div class="csslider infinity" id="slider1">
 						<input type="radio" name="slides" checked="checked" id="slides_1"/>

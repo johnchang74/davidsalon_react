@@ -528,7 +528,7 @@ class Services extends Component {
                             </div>
                             <div class="col-lg-6  mb-lg-0 mb-5">
                                 <div class="padding">
-                                    <img src="/assets/images/inst_4_faces_v1.jpg"></img>
+                                    <img src="/assets/images/inst_4_faces_v1.jpg" alt=" "></img>
                                 </div>
                             </div>
                         </div>
@@ -583,7 +583,7 @@ class Services extends Component {
                                     </div>
                                     <div class="menu-item">
                                         <div class="row border-dot no-gutters">
-                                            <img src="/assets/images/aveda_pure_pro_spa.jpg"></img>            
+                                            <img src="/assets/images/aveda_pure_pro_spa.jpg" alt=" "></img>            
                                         </div>
                                     </div>
                                 </div>
