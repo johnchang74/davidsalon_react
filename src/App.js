@@ -14,7 +14,7 @@ import AboutUs from './components/AboutUs';
 
 function App() {
   return (
-    <div>
+    <div class="main_photos">
       
       <Router>
         <Topbar/>

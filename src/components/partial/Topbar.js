@@ -5,8 +5,8 @@ class Topbar extends Component{
     render(){
         return(
 		<div>
-			<div className="topbar_row">
-				<div className="col-md-12">
+			<div class="topbar_row">
+				<div class="col-md-12">
 					<Navbar className="color-nav" variant="dark" expand="lg" sticky="top">
 						<Navbar.Toggle aria-controls="basic-navbar-nav"/>
 						<Navbar.Collapse id="basic-navbar-nav">

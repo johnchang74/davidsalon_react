@@ -156,8 +156,10 @@ ul.banner_slide_bg {
 div.img_box_container {
     display: flex;
     justify-content: center;
-    color: black;
-    width: 100%;
+    /* color: black; */
+    background: black;
+    /* width: 100%; */
+    padding-right: 0%;
 }
 
 div.img_box {
@@ -165,30 +167,33 @@ div.img_box {
     width: 33.33%;
 }
 
-@media screen and (min-width: 425px) {
+/* @media screen and (min-width: 425px) {
     img.landing-image1, img.landing-image2, img.landing-image3 {
         height: 480px;
         background-size: contain;
     }
-}
-
-/* img.landing-image1 {
-    height: 480px;
-    background-size: contain;
-}
-
-img.landing-image2 {
-    height: 480px;
-    background-size: contain;
-}
-
-img.landing-image3 {
-    height: 480px;
-    background-size: contain;
 } */
 
-/* //text slider */
+div.landing-image1 {
+    height: 680px;
+    /* width: auto; */
+    float: center;
+    /* background-size: contain; */
+}
 
+div.landing-image2 {
+    height: 680px;
+    float: center;
+    /* background-size: contain; */
+}
+
+div.landing-image3 {
+    height: 680px;
+    float: center;
+    /* background-size: contain; */
+}
+
+/* //text slider */
 .bs-slider-overlay {
     width: 1000px;
     height: 100%; 
@@ -199,6 +204,7 @@ img.landing-image3 {
     -o-background-size: 2px;
     -ms-background-size: 2px;
 }
+
 .bs-slider-overlay1 {
     width: 100%;
     height: 100%; 
@@ -1344,6 +1350,8 @@ subscribe form {
     -ms-background-size: cover;
     background-size: cover;
     /* min-height: 28em; */
+    /* width: 100%; */
+    /* padding-right: 0%; */
 }
 
 hr {
@@ -1353,6 +1361,7 @@ hr {
 .layer.footer {
     min-height: 30em;
     background: rgba(0, 0, 0, 0.82);
+    /* padding-right: 0%; */
 }
 
 .footer-top-inner-w3ls {
