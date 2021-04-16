@@ -13,7 +13,7 @@ class Footer extends Component{
                                             <h3 class="mb-3 w3pvt_title">Opening Hours</h3>
                                             <hr/>
                                             <ul class="list-info-w3pvt last-w3ls-contact mt-lg-4">
-                                                <div class="col-md-12">
+                                                <div class="row">
                                                     <div class="col-md-12">
                                                         <p>Monday<span class="tab-space"></span>11:00 am - 6:00 pm</p>
                                                     </div>

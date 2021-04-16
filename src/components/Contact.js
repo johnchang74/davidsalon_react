@@ -61,13 +61,13 @@ class Contact extends Component{
         let errors = {};
         let formIsValid = true;
 
-        console.log(name_value);
-        console.log(email_value);
-        console.log(phone_value);
-        console.log(message_text);
+        // console.log(name_value === '');
+        // console.log(email_value === '');
+        // console.log(phone_value === '');
+        // console.log(message_text === '');
 
         //Name
-        if(!name_value){
+        if(name_value === ''){
            formIsValid = false;
            errors["username"] = "Valid name must be provided";
         } else { 
@@ -81,7 +81,7 @@ class Contact extends Component{
         }
    
         //Email
-        if(!email_value){
+        if(email_value === ''){
            formIsValid = false;
            errors["email"] = "Valid email must be provided";
         } else {
@@ -97,7 +97,7 @@ class Contact extends Component{
         }
 
         //Phone
-        if(!phone_value){
+        if(phone_value === ''){
             formIsValid = false;
             errors["phone"] = "Valid phone number must be provided";
         } else {
@@ -111,7 +111,7 @@ class Contact extends Component{
         }
         
         //Message
-        if(!message_text){
+        if(message_text === ''){
             formIsValid = false;
             errors["message"] = "Your appointment inquiry must be provided to arrange";
          }
@@ -149,7 +149,7 @@ class Contact extends Component{
                                         <div class="form-group">
                                             <label>Name</label>
                                             <input class="form-control" name="username" type="text" size="30" placeholder="Type your name" onChange={this.handleChange} value={this.state.username}/>
-                                            <span style={{color: "red"}}>{this.state.errors["name"]}</span>
+                                            <span style={{color: "red"}}>{this.state.errors["username"]}</span>
                                         </div>
                                         <div class="form-group">
                                             <label>Email</label>
