@@ -8,8 +8,12 @@ class Contact extends Component{
         super(props);
    
         this.state = {
-            fields: {},
-            errors: {}
+            username: '',
+            email: '',
+            phone: '',
+            message: '',
+            errors: {},
+
         }
      }
 
@@ -23,6 +27,7 @@ class Contact extends Component{
             emailjs.sendForm(apikeys.SERVICE_ID, apikeys.TEMPLATE_ID, e.target, apikeys.USER_ID)
             .then(result => {
                 alert('Message Sent', result.text);
+                this.onReset();
             },
             error => {
                 alert('An error occured, Plese try again', error.text);
@@ -32,40 +37,59 @@ class Contact extends Component{
         }
     }
 
-    handleChange(field, e){         
-        let fields = this.state.fields;
-        fields[field] = e.target.value;        
-        this.setState({fields});
+    onReset=()=>{
+        this.setState({
+            username: '',
+            email: '',
+            phone: '',
+            message: '',
+            errors: {}
+        });
     }
 
-    handleValidation(){
-        let fields = this.state.fields;
+    handleChange=(e)=>{
+        let field_name = e.target.name;
+        let field_value = e.target.value;        
+        this.setState({[field_name]: field_value});
+    }
+
+    handleValidation() {
+        let name_value = this.state.username;
+        let email_value = this.state.email;
+        let phone_value = this.state.phone;
+        let message_text = this.state.message;
         let errors = {};
         let formIsValid = true;
 
+        console.log(name_value);
+        console.log(email_value);
+        console.log(phone_value);
+        console.log(message_text);
+
         //Name
-        if(!fields["name"]){
+        if(!name_value){
            formIsValid = false;
-           errors["name"] = "Valid name must be provided";
+           errors["username"] = "Valid name must be provided";
         } else { 
-            if(typeof fields["name"] !== "undefined"){
-                if(!fields["name"].match(/^[a-zA-Z ]+$/)){
-                formIsValid = false;
-                errors["name"] = "Name should contain only alphabets";
+            if(typeof name_value !== "undefined"){
+                // console.log(name_value.match(/^[a-zA-Z ]+$/));
+                if(!name_value.match(/[a-zA-Z ]+$/)){
+                    formIsValid = false;
+                    errors["username"] = "Name should contain only alphabets";
                 }        
             }
         }
    
         //Email
-        if(!fields["email"]){
+        if(!email_value){
            formIsValid = false;
            errors["email"] = "Valid email must be provided";
         } else {
-            if(typeof fields["email"] !== "undefined"){
-                let lastAtPos = fields["email"].lastIndexOf('@');
-                let lastDotPos = fields["email"].lastIndexOf('.');
+            if(typeof email_value !== "undefined"){
+                let lastAtPos = email_value.lastIndexOf('@');
+                let lastDotPos = email_value.lastIndexOf('.');
      
-                if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
+                if (!(lastAtPos < lastDotPos && lastAtPos > 0 && email_value.indexOf('@@') === -1 && lastDotPos > 2 && (email_value.length - lastDotPos) > 2)) {
                    formIsValid = false;
                    errors["email"] = "Email is not valid";
                  }
@@ -73,12 +97,13 @@ class Contact extends Component{
         }
 
         //Phone
-        if(!fields["phone"]){
+        if(!phone_value){
             formIsValid = false;
             errors["phone"] = "Valid phone number must be provided";
         } else {
-            if(typeof fields["name"] !== "undefined"){
-                if(!fields["name"].match(/^[a-zA-Z ]+$/)){
+            if(typeof phone_value !== "undefined"){
+                // console.log(phone_value.match(/^[0-9/-/(/) ]+$/));
+                if(!phone_value.match(/[0-9/-/(/) ]+$/)){
                    formIsValid = false;
                    errors["name"] = "Name should contain only alphabets";
                 }        
@@ -86,7 +111,7 @@ class Contact extends Component{
         }
         
         //Message
-        if(!fields["message"]){
+        if(!message_text){
             formIsValid = false;
             errors["message"] = "Your appointment inquiry must be provided to arrange";
          }
@@ -118,42 +143,38 @@ class Contact extends Component{
                             </h4>
                         </div>
                         <div class="contact-w3pvt-form mt-5">
-                            <form action="#" class="w3layouts-contact-fm" method="post" onSubmit={this.onSubmit}>
+                            <form action="#" class="w3layouts-contact-fm" method="post" onSubmit={this.onSubmit} onReset={this.onReset}>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input class="form-control" name="name" type="text" size="30" placeholder="Type your name" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]}/>
+                                            <input class="form-control" name="username" type="text" size="30" placeholder="Type your name" onChange={this.handleChange} value={this.state.username}/>
                                             <span style={{color: "red"}}>{this.state.errors["name"]}</span>
                                         </div>
-                                        {/* <div class="form-group">
-                                            <label>Last Name</label>
-                                            <input class="form-control" name="" type="text" name="Name" placeholder="" required="" />
-                                        </div> */}
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input class="form-control" name="email" type="text" size="30" placeholder="Type your email" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]}/>
+                                            <input class="form-control" name="email" type="text" size="30" placeholder="Type your email" onChange={this.handleChange} value={this.state.email}/>
                                             <span style={{color: "red"}}>{this.state.errors["email"]}</span>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone</label>
-                                            <input class="form-control" name="phone" type="text" size="30" placeholder="Type your phone" onChange={this.handleChange.bind(this, "phone")} value={this.state.fields["phone"]}/>
+                                            <input class="form-control" name="phone" type="text" size="30" placeholder="Type your phone" onChange={this.handleChange} value={this.state.phone}/>
                                             <span style={{color: "red"}}>{this.state.errors["phone"]}</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Write Message</label>
-                                            <textarea class="form-control" name="message" type="text" size="1000" placeholder="Type your message" onChange={this.handleChange.bind(this, "message")} value={this.state.fields["message"]}></textarea>
+                                            <textarea class="form-control" name="message" type="text" size="1000" placeholder="Type your message" onChange={this.handleChange} value={this.state.message}/>
                                             <span style={{color: "red"}}>{this.state.errors["message"]}</span>
                                         </div>
                                     </div>
                                     <div class="form-group mx-auto mt-3">
-                                        <button type="submit" class="btn submit">Submit</button>
+                                        <div class="row">
+                                            <button type="submit" class="btn submit submit-align">Submit</button>
+                                            <button type="reset" class="btn submit reset-align">Reset</button>                                                
+                                        </div>
                                     </div>
-                                    {/* <div class="form-group mx-auto mt-3">
-                                        <button type="reset" class="btn submit">Reset</button>
-                                    </div> */}
                                 </div>
                             </form>
                         </div>

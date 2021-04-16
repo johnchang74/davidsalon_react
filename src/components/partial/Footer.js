@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col} from 'reactstrap'
+import {Row, Col} from 'reactstrap'
 
 class Footer extends Component{
     render(){
@@ -15,25 +15,25 @@ class Footer extends Component{
                                             <ul class="list-info-w3pvt last-w3ls-contact mt-lg-4">
                                                 <div class="col-md-12">
                                                     <div class="col-md-12">
-                                                        <p>Monday<span class="tab-space3"></span>11:00 am - 6:00 pm</p>
+                                                        <p>Monday<span class="tab-space"></span>11:00 am - 6:00 pm</p>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <p>Tuesday<span class="tab-space3"></span>11:00 am - 6:00 pm</p>
+                                                        <p>Tuesday<span class="tab-space"></span>11:00 am - 6:00 pm</p>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <p>Wednesday<span class="tab-space0"></span>11:00 am - 6:00 pm</p>
+                                                        <p>Wednesday<span class="tab-space"></span>11:00 am - 6:00 pm</p>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <p>Thursday<span class="tab-space2"></span>11:00 am - 6:00 pm</p>
+                                                        <p>Thursday<span class="tab-space"></span>11:00 am - 6:00 pm</p>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <p>Friday<span class="tab-space4"></span>11:00 am - 7:00 pm</p>
+                                                        <p>Friday<span class="tab-space"></span>11:00 am - 7:00 pm</p>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <p>Saturday<span class="tab-space2"></span>11:00 am - 6:00 pm</p>
+                                                        <p>Saturday<span class="tab-space"></span>11:00 am - 6:00 pm</p>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <p>Sunday<span class="tab-space4"></span>1:00 pm - 6:00 pm</p>
+                                                        <p>Sunday<span class="tab-space"></span>1:00 pm - 6:00 pm</p>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <p>Only by appointment</p>
