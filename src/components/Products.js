@@ -20,7 +20,14 @@ class Products extends Component{
                 </div>
                 <section class="gallery py-5" id="gallery">
                     <div class="container py-md-5">
-                        <h3 class="heading text-center mb-3 mb-sm-5">AVEDA Products</h3>
+                        {/* <div class="row">
+                            <div class="col-md-4">
+                                <img class="prod-logo" src="/assets/images/david_salon_logo_final_v4.jpg" alt=" "></img>
+                            </div>
+                            <div class="col-md-4">  
+                                <h3 class="heading text-center mb-3 mb-sm-5 prod-title">Products</h3>
+                            </div>
+                        </div> */}
                         <div class="gallery-content">
                             <div class="row">
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">HAIR CARE
