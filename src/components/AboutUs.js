@@ -29,9 +29,43 @@ class AboutUs extends Component {
                                 <div class="col-md-4 col-sm-6 gal-img">
                                     <h3 class="owner">Hair Stylist David Kim</h3>
                                     <div class="owner_bio">
-                                        <p>David Kim is an OCT licensed hairstylist,</p>
-                                        <p>Aveda Colourist/Ambassador,</p>
-                                        <p>owner of David Kim Salon de Beauté.</p>
+                                        <div class="about-text">
+                                            <p>Canada OCT Licensed Hairstylist,</p>
+                                            <p>CTS Colourist, Aveda Concept Salon, Aveda Ambassador,</p>
+                                            <p>owner of David Kim Salon de Beauté.</p>
+                                        </div>
+                                        {/* <div class="badge-title">
+                                            <h5>Concept Salon</h5>
+                                        </div>
+                                        <div class="badge">
+                                            <div class="col-md-1-1">
+                                                <span class="hair-color1">hc</span>
+                                            </div>
+                                            <div class="col-md-1-2">
+                                                <span class="hair-color2">pp</span>
+                                            </div>
+                                            <div class="col-md-1-3">
+                                                <span class="hair-color3">ss</span>
+                                            </div>
+                                            <div class="col-md-1-4">
+                                                <span class="hair-color4">sr</span>
+                                            </div>
+                                        </div> */}
+                                        
+                                        {/* <div class="row">
+                                            <div class="col-md-1-1 badge">
+                                                <span class="hair-color1">hc</span>
+                                            </div>
+                                            <div class="col-md-1-1 badge">
+                                                <span class="hair-color2">pp</span>
+                                            </div>
+                                            <div class="col-md-1-1 badge">
+                                                <span class="hair-color3">ss</span>
+                                            </div>
+                                            <div class="col-md-1-1 badge">
+                                                <span class="hair-color4">sr</span>
+                                            </div>                                        
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

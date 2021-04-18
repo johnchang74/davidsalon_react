@@ -14,6 +14,7 @@ class Topbar extends Component{
 								<Nav.Link href="/">Home</Nav.Link>
 								<Nav.Link href="/aboutus">About Us</Nav.Link>
 								<Nav.Link href="/services">Services</Nav.Link>
+								<Nav.Link href="https://www.aveda.ca/salon/dk-salon-de-beaute">Shop Online</Nav.Link>
 								<Nav.Link href="/products">Products</Nav.Link>
 								<Nav.Link href="/contact">Book Appointment</Nav.Link>
 							</Nav>

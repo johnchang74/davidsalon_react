@@ -81,7 +81,7 @@ class Footer extends Component{
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.instagram.com/david_salon_aurora/">
+                                            <a href="https://www.instagram.com/imgdavidkim/">
                                             <span class="fa fa-instagram"></span>
                                             </a>
                                         </li>
