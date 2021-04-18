@@ -20,34 +20,27 @@ class Products extends Component{
                 </div>
                 <section class="gallery py-5" id="gallery">
                     <div class="container py-md-5">
-                        {/* <div class="row">
-                            <div class="col-md-4">
-                                <img class="prod-logo" src="/assets/images/david_salon_logo_final_v4.jpg" alt=" "></img>
-                            </div>
-                            <div class="col-md-4">  
-                                <h3 class="heading text-center mb-3 mb-sm-5 prod-title">Products</h3>
-                            </div>
-                        </div> */}
                         <div class="gallery-content">
                             <div class="row">
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">HAIR CARE
-                                    <a href="https://www.aveda.ca/hair-care"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY21/Nutriplenish_Daily_Moisturizing_Treatment/FY20_Jan_Nutriplenish_Hair_gnav_drop_down-updated-V2.jpg" alt="aegis" class="img-fluid mt-4"/></a>
+                                    <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY21/Nutriplenish_Daily_Moisturizing_Treatment/FY20_Jan_Nutriplenish_Hair_gnav_drop_down-updated-V2.jpg" alt="aegis" class="img-fluid mt-4"/></a>
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">STYLING
-                                    <a href="https://www.aveda.ca/styling"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY19/Oct_BCA_Speed_of_Light/Speed_of_Light/styling_SOL_oct_gnav.jpg" alt="aegis" class="img-fluid mt-4"/></a>
+                                    <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY19/Oct_BCA_Speed_of_Light/Speed_of_Light/styling_SOL_oct_gnav.jpg" alt="aegis" class="img-fluid mt-4"/></a>
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">SKIN CARE
-                                    <a href="https://www.aveda.ca/skin-care"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY21/tulasara/FY21_Tulasara_skincare_gnav_drop_down.jpg" alt="aegis" class="img-fluid mt-4"/></a>
+                                    <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY21/tulasara/FY21_Tulasara_skincare_gnav_drop_down.jpg" alt="aegis" class="img-fluid mt-4"/></a>
                                 </div>
                                 <p></p>
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">BODY CARE
-                                    <a href="https://www.aveda.ca/body-care"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY19/June_Cherry_Almond_Body/FY19_June_CherryAlmondBody_gnav_drop_down.jpg" alt="aegis" class="img-fluid mt-4"/></a>
+                                    <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY19/June_Cherry_Almond_Body/FY19_June_CherryAlmondBody_gnav_drop_down.jpg" alt="aegis" class="img-fluid mt-4"/></a>
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">MAKEUP
-                                    <a href="https://www.aveda.ca/makeup/feed-my-lips"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY20/Sept_FeedMyLips/FY20_Sept_Makeup_gnav_drop_down.jpg" alt="aegis" class="img-fluid mt-4"/></a>
+                                    <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY20/Sept_FeedMyLips/FY20_Sept_Makeup_gnav_drop_down.jpg" alt="aegis" class="img-fluid mt-4"/></a>
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">HAIR COLOUR
-                                    <a href="https://www.aveda.ca/hair-colour"><img src="https://www.aveda.ca/media/export/cms/hair_color_landing/Nov_2019_update/HC_HairColor_FullSpectrum_Square.jpg" alt="aegis" class="img-hair-colour mt-4"/></a>
+                                    <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/hair_color_landing/Nov_2019_update/HC_HairColor_FullSpectrum_Square.jpg" alt="aegis" class="img-hair-colour mt-4"/></a>
+                                    <p>Only curb side pickup or contact our salon</p>
                                 </div>
                             </div>
                         </div>

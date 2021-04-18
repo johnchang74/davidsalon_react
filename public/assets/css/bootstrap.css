@@ -1123,9 +1123,9 @@ pre code {
 
   .col-md-1-1 {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 9%;
-    flex: 0 0 9%;
-    max-width: 9%;
+    -ms-flex: 0 0 8%;
+    flex: 0 0 8%;
+    max-width: 8%;
   }
 
   .col-md-1-2 {

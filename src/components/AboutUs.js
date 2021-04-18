@@ -24,7 +24,7 @@ class AboutUs extends Component {
                         <div class="gallery-content">
                             <div class="row">
                                 <div class="col-md-4 col-md-6 gal-img">
-                                    <img src="/assets/images/david_kim_business_card.png" alt="aegis" class="dk_business_card" />
+                                    <img src="/assets/images/david_kim_business_card_v1.png" alt="aegis" class="dk_business_card" />
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img">
                                     <h3 class="owner">Hair Stylist David Kim</h3>
@@ -39,16 +39,16 @@ class AboutUs extends Component {
                                             <h5>Concept Salon</h5>
                                             <div class="blank-space"></div>
                                             <div class="row">
-                                                <div class="col-md-1 badge">
+                                                <div class="col-md-1-1 badge">
                                                     <span class="hair-color1">hc</span>
                                                 </div>
-                                                <div class="col-md-1 badge">
+                                                <div class="col-md-1-1 badge">
                                                     <span class="hair-color2">pp</span>
                                                 </div>
-                                                <div class="col-md-1 badge">
+                                                <div class="col-md-1-1 badge">
                                                     <span class="hair-color3">ss</span>
                                                 </div>
-                                                <div class="col-md-1 badge">
+                                                <div class="col-md-1-1 badge">
                                                     <span class="hair-color4">sr</span>
                                                 </div>
                                             </div>
