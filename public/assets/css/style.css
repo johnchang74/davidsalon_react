@@ -1478,10 +1478,11 @@ h3.w3pvt_title {
 
 .w3ls-icons li a span {
     color: #fff;
+    font-size: 2em;
 }
 
 .w3ls-icons li a span:hover {
-    color: #ffc80a;
+    color: green;
 }
 
 /* //footer */
@@ -2057,6 +2058,8 @@ img.sanity {
 
 div.aveda-background {
     position: relative;
+    /* background-size: cover; */
+    /* color: #fff; */
 }
 
 div.aveda-background::before {
@@ -2064,6 +2067,6 @@ div.aveda-background::before {
     position: absolute;
     background: url(../images/aveda_wallpaper.jpg) no-repeat;
     background-size: cover;
-    background-position: 50% 0;
-    opacity: 0.5;
+    /* background-position: 50% 0; */
+    opacity: 0.4;
 }
