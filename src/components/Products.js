@@ -39,7 +39,7 @@ class Products extends Component{
                                     <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/Site_Refreshes/FY20/Sept_FeedMyLips/FY20_Sept_Makeup_gnav_drop_down.jpg" alt="aegis" class="img-fluid mt-4"/></a>
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">HAIR COLOUR
-                                    <a href="https://www.aveda.ca/salon/dk-salon-de-beaute"><img src="https://www.aveda.ca/media/export/cms/hair_color_landing/Nov_2019_update/HC_HairColor_FullSpectrum_Square.jpg" alt="aegis" class="img-hair-colour mt-4"/></a>
+                                    <a href="/contact"><img src="https://www.aveda.ca/media/export/cms/hair_color_landing/Nov_2019_update/HC_HairColor_FullSpectrum_Square.jpg" alt="aegis" class="img-hair-colour mt-4"/></a>
                                     <p>Only curb side pickup or contact our salon</p>
                                 </div>
                             </div>

@@ -18,6 +18,7 @@ class AboutUs extends Component {
                         <li class="breadcrumb-item active" aria-current="page">About Us</li>
                     </ol>
                 </div>
+                <div class="aveda-background">
                 <section class="gallery py-5" id="gallery">
                     <div class="container py-md-5">
                         <h3 class="heading text-center mb-3 mb-sm-5">About Us</h3>
@@ -34,7 +35,6 @@ class AboutUs extends Component {
                                             <p>CTS Colourist, Aveda Concept Salon, Aveda Ambassador,</p>
                                             <p>owner of David Kim Salon de Beauté.</p>
                                         </div>
-                                        {/* <div class=""></div> */}
                                         <div class="badge-title">
                                             <h5>Concept Salon</h5>
                                             <div class="blank-space"></div>
@@ -53,29 +53,14 @@ class AboutUs extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                        
-                                        {/* <div class="row">
-                                            <div class="col-md-1-1 badge">
-                                                <span class="hair-color1">hc</span>
-                                            </div>
-                                            <div class="col-md-1-1 badge">
-                                                <span class="hair-color2">pp</span>
-                                            </div>
-                                            <div class="col-md-1-1 badge">
-                                                <span class="hair-color3">ss</span>
-                                            </div>
-                                            <div class="col-md-1-1 badge">
-                                                <span class="hair-color4">sr</span>
-                                            </div>                                        
-                                        </div> */}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section>
+                
+                <section class="aveda_background">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4 youtube-clip">
@@ -99,6 +84,7 @@ class AboutUs extends Component {
                         </div>
                     </div>
                 </section>
+                </div>
             </div>
         )
     }

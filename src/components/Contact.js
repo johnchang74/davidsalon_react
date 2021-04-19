@@ -135,8 +135,11 @@ class Contact extends Component{
                 </div>
                 <section class="content-info py-5">
                     <div class="container py-md-5">
+                        
                         <div class="text-center px-lg-5">
                             <h4 class="heading text-center mb-3 mb-sm-5">
+                                <img class="sanity" src="/assets/images/sanitization_note_v1.jpg" alt=" "></img>
+                                <div class="blank-space"></div>
                                 <p>No walk-in please. All of our services are provided by appointment ONLY.</p>
                                 <p>For <a href="https://www.wish.com/local">Wish</a> pickup customers, please kindly pick up your package only 
                                 from Monday to Wednesday between 11AM and 2PM. Please comply with COVID-19 rules for any visit.</p>
