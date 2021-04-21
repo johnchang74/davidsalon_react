@@ -38,18 +38,54 @@ class AboutUs extends Component {
                                             <div class="badge-title">
                                                 <h5>Concept Salon</h5>
                                                 <div class="blank-space"></div>
-                                                <div class="row">
-                                                    <div class="col-md-1-1 badge">
-                                                        <span class="hair-color1">hc</span>
+                                                <div class="badge-row">
+                                                    <div class="col-md-1-1 footer-badge">
+                                                        <div class="hair-color1-1 tooltip">hc
+                                                            <span class="tooltiptext">
+                                                                Hair color:
+                                                                Exclusive Aveda Hair Color - 
+                                                                these locations only use Aveda 
+                                                                hair color-up to 99% naturally 
+                                                                derived-and no other companies' 
+                                                                hair color products.
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-1-1 badge">
-                                                        <span class="hair-color2">pp</span>
+                                                    <div class="col-md-1-1 footer-badge">
+                                                        <div class="hair-color2-1 tooltip">pp
+                                                            <span class="tooltiptext">
+                                                                Aveda+ Rewards:
+                                                                These locations participate 
+                                                                in the Aveda+ Rewards program. 
+                                                                To learn about this program, 
+                                                                visit aveda.com/avedaplus.
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-1-1 badge">
-                                                        <span class="hair-color3">ss</span>
+                                                    <div class="col-md-1-1 footer-badge">
+                                                        <div class="hair-color3-1 tooltip">ss
+                                                            <span class="tooltiptext">
+                                                                Signature Spa Services:
+                                                                Performs Aveda Signature Spa Services - 
+                                                                these locations perform spa services 
+                                                                such as facials, massages and other 
+                                                                body treatments using only Aveda skin, 
+                                                                body and aroma products.
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-1-1 badge">
-                                                        <span class="hair-color4">sr</span>
+                                                    <div class="col-md-1-1 footer-badge">
+                                                        <div class="hair-color4-1 tooltip">sr
+                                                            <span class="tooltiptext">
+                                                                Sensory Rituals:
+                                                                Performs Complimentary Sensory Rituals - 
+                                                                these locations consistently deliver 
+                                                                the Aveda Guest Service Experience by 
+                                                                providing complimentary Comforting Tea, 
+                                                                stress relieving rituals, aroma sensory 
+                                                                journey and product recommendations.
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
