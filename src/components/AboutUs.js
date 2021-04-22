@@ -97,6 +97,34 @@ class AboutUs extends Component {
                     </section>
                     <section>
                         <div class="container">
+                            <h4 class="heading text-center mb-3 mb-sm-5">Our Certification</h4>
+                            <p>We provide a socially distanced environment 
+                            that has clean ventilation and distilled water system.</p>
+                            <p class="covid-19">*Our Team Follows the Covid-19 Guidelines*</p> 
+                            <p>A clean established salon with Barbicide, PDQ, PPE 
+                            certified products used</p>
+                            <div class="blank-space"></div>
+                            <div class="row img-certificate">
+                                <div class="col-md-6">
+                                    <img class="certificate" src="./assets/images/dk_certification_v1.jpg" alt=" "></img>
+                                    <div class="blank-space"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="certificate" src="./assets/images/dk_certification1_v1.jpg" alt=" "></img>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="certificate" src="./assets/images/dk_certification2_v1.jpg" alt=" "></img>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="certificate" src="./assets/images/dk_certification3_v1.jpg" alt=" "></img>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="container">
+                            <div class="blank-space-1"></div>
+                            <h4 class="heading text-center mb-3 mb-sm-5">Our Media</h4>
                             <div class="row">
                                 <div class="col-md-4 youtube-clip">
                                     <h5>Love for Natural Beauty | Horst Rechelbacher | Aveda</h5>

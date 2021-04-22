@@ -2044,7 +2044,7 @@ div.blank-space {
 
 div.blank-space-1 {
     width: 20px;
-    height: 30px;
+    height: 60px;
 }
 
 div.hair-color1 {
@@ -2125,4 +2125,19 @@ div.aveda-background::before {
     background-size: cover;
     /* background-position: 50% 0; */
     opacity: 0.4;
+}
+
+img.certificate {
+    background-size: contain;
+    border: 8px solid darkgreen;
+}
+
+p.covid-19 {
+    color: red;
+}
+
+p.hair-color {
+    color: red;
+    font-size: 13px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

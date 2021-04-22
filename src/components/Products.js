@@ -40,7 +40,7 @@ class Products extends Component{
                                 </div>
                                 <div class="col-md-4 col-sm-6 gal-img prod-name">HAIR COLOUR
                                     <a href="/contact"><img src="https://www.aveda.ca/media/export/cms/hair_color_landing/Nov_2019_update/HC_HairColor_FullSpectrum_Square.jpg" alt="aegis" class="img-hair-colour mt-4"/></a>
-                                    <p>Only curb side pickup or contact our salon</p>
+                                    <p class="hair-color">*Only curb side pickup or contact our <a href="/contact">David Kim Salon de Beaute</a></p>
                                 </div>
                             </div>
                         </div>
