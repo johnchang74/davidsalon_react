@@ -3,6 +3,7 @@ import {Row, Col} from 'reactstrap'
 
 class Footer extends Component{
     render(){
+        console.log(window.location.href);
         return(
             <div class="footer-content">
                 <div class="layer footer">
@@ -139,7 +140,7 @@ class Footer extends Component{
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="move-top text-right"><a href="#home" class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a></div>
+                                <div class="move-top text-right"><a href={window.location.href} class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a></div>
                             </Col>
                         </Row>
                     </div>

@@ -2047,6 +2047,11 @@ div.blank-space-1 {
     height: 60px;
 }
 
+div.blank-space-2 {
+    width: 20px;
+    height: 5px;
+}
+
 div.hair-color1 {
     border: 1.5px solid white;
     background-color: #ada04b;

@@ -19,7 +19,7 @@ class Topbar extends Component{
 								src="/assets/images/aveda_logo_black_v1.jpg"
 								width="60px"
 								height="20px"
-								className="d-inline-block align-top"
+								className="d-inline-block align-bottom"
 								alt=" "/>
 							{/* <img
 								src="/assets/images/aveda_concept_salon.png"
