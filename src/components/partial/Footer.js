@@ -39,6 +39,12 @@ class Footer extends Component{
                                             <div class="col-md-12">
                                                 <p>Only by appointment</p>
                                             </div>
+                                            <div class="col-md-12">
+                                                <p>Curbside pick-up now available</p>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>Gift Cards available</p>
+                                            </div>
                                         </div>
                                     </ul>
                                 </div>
