@@ -1734,6 +1734,15 @@ img.dk_business_card {
     height: 100%;
 }
 
+img.lu_business_card {
+    /* background-position: right; */
+    width: 450px;
+    height: 450px;
+    /* border-radius: 90%; */
+    /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
+    /* filter: grayscale(80%); */
+}
+
 h3.owner {
     /* font-style: normal;
     font-size: 16px;
@@ -2113,13 +2122,15 @@ div.hair-color4-1 {
 }
 
 img.sanity {
-    width: 400px;
-    height: 450px;
+    width: 430px;
+    height: 470px;
+    background-position: center;
 }
 
 div.aveda-background {
     position: relative;
-    /* background-size: cover; */
+    /* background: url(../images/aveda_wallpaper.jpg); */
+    /* background-size: contain; */
     /* color: #fff; */
 }
 

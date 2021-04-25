@@ -138,7 +138,15 @@ class Contact extends Component{
                         
                         <div class="text-center px-lg-5">
                             <h4 class="heading text-center mb-3 mb-sm-5">
-                                <img class="sanity" src="/assets/images/sanitization_note_v1.jpg" alt=" "></img>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img class="sanity" src="/assets/images/sanitization_note_v1.jpg" alt=" "></img>
+                                        <div class="blank-space"></div>
+                                    </div>                                    
+                                    <div class="col-md-6">
+                                        <img class="sanity" src="/assets/images/sanity_shop_v1.jpg" alt=" "></img>
+                                    </div>                                    
+                                </div>
                                 <div class="blank-space"></div>
                                 <p>No walk-in please. All of our services are provided by appointment ONLY.</p>
                                 <p>For <a href="https://www.wish.com/local">Wish</a> pickup customers, please kindly pick up your package only 

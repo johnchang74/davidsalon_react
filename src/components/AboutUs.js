@@ -28,7 +28,7 @@ class AboutUs extends Component {
                                         <img src="/assets/images/david_kim_business_card_v1.png" alt="aegis" class="dk_business_card" />
                                     </div>
                                     <div class="col-md-4 col-sm-6 gal-img">
-                                        <h3 class="owner">Hairstylist David Kim</h3>
+                                        <h3 class="owner">Hairstylist David J. Kim</h3>
                                         <div class="owner_bio">
                                             <div class="about-text">
                                                 <p>Canada OCT Licensed Hairstylist,</p>
@@ -92,6 +92,22 @@ class AboutUs extends Component {
                                         </div>
                                     </div>
                                 </div>
+                                <div class="blank-space-1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-6 gal-img">
+                                        <img src="/assets/images/lucy_photo_v1.jpg" alt="aegis" class="lu_business_card" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 gal-img">
+                                        <h3 class="owner">Hairstylist Lucy H.W Kim</h3>
+                                        <div class="owner_bio">
+                                            <div class="about-text">
+                                                <p>OCT Licensed Hairstylist, Colourist,</p> 
+                                                <p>Medical Aesthetician in Ontario,</p>
+                                                <p>Cosmetician, Cosmotologist, Standard First AID CPR/AED Level C</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -117,7 +133,7 @@ class AboutUs extends Component {
                                     <div class="blank-space"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img class="certificate" src="./assets/images/dk_certification3_v1.jpg" alt=" "></img>
+                                    <img class="certificate" src="./assets/images/excel_cert_v1.jpg" alt=" "></img>
                                 </div>
                                 <div class="col-md-6">
                                     <img class="certificate" src="./assets/images/certification4_v1.jpg" alt=" "></img>
