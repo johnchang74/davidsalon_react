@@ -2159,7 +2159,14 @@ p.hair-color {
 }
 
 p.wish-note {
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-decoration-color: red;
     color: red;
+}
+
+div.wish-block {
+    /* max-width: 700px; */
+    /* background-position: center;
+    justify-content: center; */
+    border: 4px solid red;
 }

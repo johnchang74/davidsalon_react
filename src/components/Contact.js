@@ -149,8 +149,13 @@ class Contact extends Component{
                                 </div>
                                 <div class="blank-space"></div>
                                 <p>No walk-in please. All of our services are provided by appointment ONLY.</p>
-                                <p>For <a href="https://www.wish.com/local">Wish</a> pickup customers, please kindly pick up your package 
-                                <p class="wish-note">only from Monday to Wednesday between 11AM and 2PM.</p> Please comply with COVID-19 rules for any visit.</p>
+                                <div class="blank-space"></div>
+                                <div class="wish-block">
+                                    <p class="wish-note">For <a href="https://www.wish.com/local">Wish</a> pickup customers, 
+                                    please pick up your package only from Monday to Wednesday between 11AM and 2PM.</p>
+                                </div>
+                                <div class="blank-space"></div>
+                                <p>Please comply with COVID-19 rules for any visit.</p>
                             </h4>
                         </div>
                         <div class="contact-w3pvt-form mt-5">
