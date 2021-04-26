@@ -1736,8 +1736,8 @@ img.dk_business_card {
 
 img.lu_business_card {
     /* background-position: right; */
-    width: 450px;
-    height: 450px;
+    width: 100%;
+    height: 100%;
     /* border-radius: 90%; */
     /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
     /* filter: grayscale(80%); */
@@ -2156,4 +2156,10 @@ p.hair-color {
     color: red;
     font-size: 13px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p.wish-note {
+    text-decoration: underline;
+    text-decoration-color: red;
+    color: red;
 }
