@@ -142,9 +142,10 @@ class AboutUs extends Component {
                                     <div class="blank-space"></div>
                                     <img class="certificate" src="./assets/images/certification7_v1.jpg" alt=" "></img>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="blank-space-1"></div>
+                                <div class="col-md-6">                                    
                                     <img class="certificate" src="./assets/images/certification5_v1.jpg" alt=" "></img>
+                                    <div class="blank-space"></div>
+                                    <img class="certificate" src="./assets/images/health_inspection.jpg" alt=" "></img>
                                 </div>
                             </div>
                         </div>

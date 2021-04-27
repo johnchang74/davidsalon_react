@@ -127,7 +127,7 @@ class Footer extends Component{
                         </Row>
                         <Row>
                             <Col>
-                                <div class="w3ls-footer text-center mt-4">
+                                <div class="w3ls-footer text-center mt-4 mb-4">
                                     <ul class="list-unstyled w3ls-icons">
                                         <li>
                                             <a href="https://www.facebook.com/davidsalonaurora/">
@@ -146,7 +146,7 @@ class Footer extends Component{
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="move-top text-right"><a href={window.location.href} class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a></div>
+                                <div class="move-top text-right"><a href={window.location.href} class="move-top"> <span class="fa fa-angle-up mb-3" aria-hidden="true"></span></a></div>
                             </Col>
                         </Row>
                     </div>

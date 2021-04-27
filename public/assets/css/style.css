@@ -10,6 +10,7 @@ body {
     font-size: 100%;
     background: #fff;
 	font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
 }
 
 html {
@@ -1501,7 +1502,10 @@ p.copy-right-grids a {
 /* //copyright */
 
 a.move-top {
+    position: fixed;
     text-align: center;
+    bottom: 0;
+    right: 0;
 }
 
 a.move-top span {
