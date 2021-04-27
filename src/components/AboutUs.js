@@ -24,10 +24,10 @@ class AboutUs extends Component {
                             <h3 class="heading text-center mb-3 mb-sm-5">About Us</h3>
                             <div class="gallery-content">
                                 <div class="row">
-                                    <div class="col-md-4 col-md-6 gal-img">
+                                    <div class="col-md-4 col-md-5 gal-img">
                                         <img src="/assets/images/david_kim_business_card_v1.png" alt="aegis" class="dk_business_card" />
                                     </div>
-                                    <div class="col-md-4 col-sm-6 gal-img">
+                                    <div class="col-md-4 col-md-5 gal-img">
                                         <h3 class="owner">Hairstylist David J. Kim</h3>
                                         <div class="owner_bio">
                                             <div class="about-text">
@@ -94,10 +94,10 @@ class AboutUs extends Component {
                                 </div>
                                 <div class="blank-space-1"></div>
                                 <div class="row">
-                                    <div class="col-md-4 col-md-6 gal-img">
+                                    <div class="col-md-4 col-md-5 gal-img">
                                         <img src="/assets/images/lucy_photo_v1.jpg" alt="aegis" class="lu_business_card" />
                                     </div>
-                                    <div class="col-md-4 col-sm-6 gal-img">
+                                    <div class="col-md-4 col-md-5 gal-img">
                                         <h3 class="owner">Hairstylist Lucy H.W Kim</h3>
                                         <div class="owner_bio">
                                             <div class="about-text">
