@@ -127,6 +127,7 @@ class AboutUs extends Component {
                                 </div>
                                 <div class="col-md-6">
                                     <img class="certificate" src="./assets/images/dk_certification1_v1.jpg" alt=" "></img>
+                                    <div class="blank-space"></div>
                                 </div>
                                 <div class="col-md-6">
                                     <img class="certificate" src="./assets/images/dk_certification2_v1.jpg" alt=" "></img>
@@ -134,18 +135,26 @@ class AboutUs extends Component {
                                 </div>
                                 <div class="col-md-6">
                                     <img class="certificate" src="./assets/images/excel_cert_v1.jpg" alt=" "></img>
+                                    <div class="blank-space"></div>
                                 </div>
                                 <div class="col-md-6">
                                     <img class="certificate" src="./assets/images/certification4_v1.jpg" alt=" "></img>
                                     <div class="blank-space"></div>
                                     <img class="certificate" src="./assets/images/certification6_v1.jpg" alt=" "></img>
                                     <div class="blank-space"></div>
-                                    <img class="certificate" src="./assets/images/certification7_v1.jpg" alt=" "></img>
                                 </div>
                                 <div class="col-md-6">                                    
                                     <img class="certificate" src="./assets/images/certification5_v1.jpg" alt=" "></img>
                                     <div class="blank-space"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="certificate" src="./assets/images/certification7_v1.jpg" alt=" "></img>
+                                    <div class="blank-space"></div>
                                     <img class="certificate" src="./assets/images/health_inspection.jpg" alt=" "></img>
+                                    <div class="blank-space"></div>                                    
+                                </div>
+                                <div class="col-md-6">                                    
+                                    <img class="certificate" src="./assets/images/aurora_dk_article_v1.jpg" alt=" "></img>
                                 </div>
                             </div>
                         </div>
