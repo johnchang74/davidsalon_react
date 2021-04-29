@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ReactGA from 'react-ga';
+
+const trackingId = "G-K8WEXYV9BJ"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -9,32 +9,32 @@ class Footer extends Component{
                 <div class="layer footer">
                     <div class="container-fluid">
                         <div class="row footer-top-inner-w3ls">
-                            <div class="col-lg-3-1 col-md-6 mt-md-0 mt-5">
+                            <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                                 <div class="footer-w3pvt">
                                     <h3 class="mb-3 w3pvt_title">Opening Hours</h3>
                                     <hr/>
                                     <ul class="list-info-w3pvt last-w3ls-contact mt-lg-4">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <p>Mon<span class="tab-space"></span>11am - 6pm</p>
+                                                <p>Monday<span class="tab-space"></span>11am - 6pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Tue<span class="tab-space"></span>11am - 6pm</p>
+                                                <p>Tueday<span class="tab-space"></span>11am - 6pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Wed<span class="tab-space"></span>11am - 6pm</p>
+                                                <p>Wednesday<span class="tab-space"></span>11am - 6pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Thu<span class="tab-space"></span>11am - 6pm</p>
+                                                <p>Thursday<span class="tab-space"></span>11am - 6pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Fri<span class="tab-space"></span>11am - 7pm</p>
+                                                <p>Friday<span class="tab-space"></span>11am - 7pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Sat<span class="tab-space"></span>11am - 6pm</p>
+                                                <p>Saturday<span class="tab-space"></span>11am - 6pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Sun<span class="tab-space"></span>1pm - 6pm</p>
+                                                <p>Sunday<span class="tab-space"></span>1pm - 6pm</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p>Only by appointment</p>
@@ -49,7 +49,7 @@ class Footer extends Component{
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-3-1 col-md-6 mt-lg-0 mt-5">
+                            <div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
                                 <div class="footer-w3pvt">
                                     <h3 class="mb-3 w3pvt_title">Welcome</h3>
                                     <hr/>
@@ -62,7 +62,7 @@ class Footer extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3-1 badge-title">
+                            <div class="col-lg-4 badge-title">
                                 <a href="/contact" class="concept-badge-1">Please visit our salon to experience our service and products</a>
                                 <div class="blank-space-1"></div>
                                 <h5 class="concept-badge">Concept Salon</h5>
