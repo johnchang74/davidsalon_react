@@ -31,16 +31,16 @@ class Footer extends Component{
                                                 <p>Friday<span class="tab-space"></span>11am - 7pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Saturday<span class="tab-space"></span>11am - 6pm</p>
+                                                <p>Saturday<span class="tab-space"></span>11am - 7pm</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Sunday<span class="tab-space"></span>1pm - 6pm</p>
+                                                <p>Sunday<span class="tab-space"></span>2pm - 6pm</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p>Only by appointment</p>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>Curbside pick-up now available</p>
+                                                <p>Curbside pick-up available</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p>Gift Cards available</p>
