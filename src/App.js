@@ -10,12 +10,12 @@ import Services from './components/Services';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import AboutUs from './components/AboutUs';
-
+import InvoicePage from './components/invoice/InvoicePage';
+import './components/invoice/scss/main.scss';
 
 function App() {
   return (
-    <div class="main_photos">
-      
+    <div className="main_photos">
       <Router>
         <Topbar/>
           <Switch>
@@ -24,10 +24,15 @@ function App() {
             <Route path='/services' component={Services}/>
             <Route path='/products' component={Products}/>
             <Route path='/contact' component={Contact}/>
+            <Route path='/invoice' component={InvoicePage}>
+              <div className="app">
+                {/* <h1 className="center fs-30">David Kim Salon Invoice Generator</h1> */}
+                <InvoicePage />
+              </div>
+            </Route>
           </Switch>
         <Footer/>
       </Router>
-      
     </div>
   );
 }
