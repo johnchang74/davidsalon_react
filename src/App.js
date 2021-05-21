@@ -26,7 +26,6 @@ function App() {
             <Route path='/contact' component={Contact}/>
             <Route path='/invoice' component={InvoicePage}>
               <div className="app">
-                {/* <h1 className="center fs-30">David Kim Salon Invoice Generator</h1> */}
                 <InvoicePage />
               </div>
             </Route>

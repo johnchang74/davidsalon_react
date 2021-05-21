@@ -29,6 +29,7 @@ Font.register({
 // }
 
 const InvoicePage = ({ data, pdfMode }) => {
+  document.title="David Kim Salon de Beauté"
   const [invoice, setInvoice] = useState(data ? { ...data } : { ...initialInvoice })
   const [subTotal, setSubTotal] = useState()
   const [discount, setDiscount] = useState()
@@ -36,6 +37,7 @@ const InvoicePage = ({ data, pdfMode }) => {
   const [total, setTotal] = useState()
   const [tip, setTip] = useState()
   const [grandTotal, setGrandTotal] = useState()
+  // console.log(subTotal + '|' + discount + '|' + saleTax + '|' + total + '|' + tip + '|' + grandTotal)
 
   const dateFormat = 'MMM dd, yyyy'
   const invoiceDate = invoice.invoiceDate !== '' ? new Date(invoice.invoiceDate) : new Date()
@@ -53,14 +55,19 @@ const InvoicePage = ({ data, pdfMode }) => {
         const newInvoice = { ...invoice }
         newInvoice[name] = value
         setInvoice(newInvoice)
-        // console.log(name + '|' + value)
-        if (name === 'initialTip' && value === 'undefined') {
-          setTip(parseFloat(invoice.initialInvoice))
-        } else if (name === 'initialTip' && value !== 'undefined') {
-          let amt = value.replace('$', '').replace(' ', '')
-          setTip(parseFloat(amt))
-        }
     }
+  }
+
+  const handleTipChange = (name, value) => {
+    // console.log(name + '|' + value)
+    const newTip = { ...invoice }
+    newTip[name] = value
+    let amt = roundToTwo(parseFloat(value.replace('$', '').replace(' ', '')))
+    setTip(amt)
+    let gAmt = total + amt
+    // setGrandTotal(gAmt)
+    newTip['initialGrandTotal'] = gAmt.toString()
+    setInvoice(newTip)
   }
 
   const handleProductLineChange = (index, name, value) => {
@@ -112,7 +119,7 @@ const InvoicePage = ({ data, pdfMode }) => {
     return amount.toFixed(2)
   }
 
-  const rountToTwo = (num) => {
+  const roundToTwo = (num) => {
     return +(Math.round(num + "e+2")  + "e-2");
   }
 
@@ -134,7 +141,7 @@ const InvoicePage = ({ data, pdfMode }) => {
     const match = invoice.discountLabel.match(/(\d+)%/)
     const discountRate = match ? parseFloat(match[1]) : 0
     const discount = subTotal ? (subTotal * discountRate) / 100 : 0
-    const decimalDiscount = rountToTwo(discount) 
+    const decimalDiscount = roundToTwo(discount) 
     setDiscount(decimalDiscount)
   }, [subTotal, invoice.discountLabel])
 
@@ -142,27 +149,30 @@ const InvoicePage = ({ data, pdfMode }) => {
     const match = invoice.taxLabel.match(/(\d+)%/)
     const taxRate = match ? parseFloat(match[1]) : 0
     const saleTax = subTotal ? (subTotal * taxRate) / 100 : 0
-    const decimalSaleTax = rountToTwo(saleTax) 
-    // console.log(decimalSaleTax)
+    const decimalSaleTax = roundToTwo(saleTax) 
     setSaleTax(decimalSaleTax)
   }, [subTotal, invoice.taxLabel])
 
   useEffect(() => {
-    const totalAmt = rountToTwo(subTotal + saleTax - discount)
+    const totalAmt = roundToTwo(subTotal + saleTax - discount)
     setTotal(totalAmt)
-  }, [subTotal, saleTax, discount, invoice.totalLabel])
+    // setGrandTotal(tip + totalAmt)
+  }, [subTotal, saleTax, discount, invoice.discountLabel, invoice.taxLabel])
 
   useEffect(() => {
-    const grandTotal = total && tip ? (total + tip) : total
-    const decimalGrandTotal = rountToTwo(grandTotal)
-    setGrandTotal(decimalGrandTotal)
-  }, [total, tip, invoice.grandTotalLabel])
+    let tAmt = roundToTwo(parseFloat(invoice.initialTip.replace('$', '').replace(' ', '')))
+    setTip(tAmt)
+  }, [invoice.initialTip])
+
+  useEffect(() => {
+    let gAmt = roundToTwo(tip ? (tip + total) : total)
+    setGrandTotal(gAmt)
+  }, [total, tip])
 
   return (
     <Document pdfMode={pdfMode}>
       <Page className="invoice-wrapper" pdfMode={pdfMode}>
         {!pdfMode && <Download data={invoice} />}
-
         <View className="flex" pdfMode={pdfMode}>
           <View className="w-50" pdfMode={pdfMode}>
             <EditableInput
@@ -540,7 +550,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                 <EditableInput
                   value={invoice.initialTip}
                   className="tip-amount"
-                  onChange={(value) => handleChange('initialTip', value)}
+                  onChange={(value) => handleTipChange('initialTip', value)}
                   pdfMode={pdfMode}
                 />
               </View>
@@ -554,7 +564,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                   pdfMode={pdfMode}
                 />
               </View>
-              <View className="w-50 i-p-5 flex" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5 flex" pdfMode={pdfMode} debug={true}>
                 <EditableInput
                   className="dark bold right i-ml-30"
                   value={invoice.currency}

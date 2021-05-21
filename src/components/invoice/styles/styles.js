@@ -97,15 +97,15 @@ const styles = {
     marginBottom: '5px',
   },
 
-  'p-4-8': {
+  'i-p-4-8': {
     padding: '4px 8px',
   },
 
-  'p-5': {
+  'i-p-5': {
     padding: '5px',
   },
 
-  'pb-10': {
+  'i-pb-10': {
     paddingBottom: '10px',
   },
 
@@ -134,7 +134,7 @@ const styles = {
 
   span: {
     padding: '4px 12px 4px 0',
-  },
+  }
 }
 
 export default styles
