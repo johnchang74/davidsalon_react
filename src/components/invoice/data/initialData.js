@@ -27,7 +27,7 @@ export const initialInvoice = {
   phoneNumber2: '',
   clientCountry: 'Canada',
   invoiceTitleLabel: 'Invoice#',
-  invoiceTitle: 'David Kim Salon de Beaute Invoice',
+  invoiceTitle: '',
   invoiceDateLabel: 'Invoice Date',
   invoiceDate: '',
   invoiceDueDateLabel: 'Due Date',
