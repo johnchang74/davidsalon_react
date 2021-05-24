@@ -48,7 +48,7 @@ export const initialInvoice = {
   ],
   subTotalLabel: 'Sub Total',
   initialSubTotal: '0.00',
-  discountLabel: 'Discount (5%)',
+  discountLabel: 'Discount (0%)',
   initialDiscount: '0.00',
   taxLabel: 'Sale Tax (13%)',
   initialTax: '0.00',

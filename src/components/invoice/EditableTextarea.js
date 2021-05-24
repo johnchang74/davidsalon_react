@@ -26,7 +26,7 @@ const EditableTextarea = ({
         <Text style={compose('span ' + (className ? className : ''))}>{value}</Text>
       ) : (
         <TextareaAutosize
-          minRows={rows || 1}
+          minrows={rows || 1}
           className={'input ' + (className ? className : '')}
           placeholder={placeholder || ''}
           value={value || ''}
