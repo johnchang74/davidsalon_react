@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import InvoicePage from './InvoicePage'
-// import InvoiceHeader from './InvoiceHeader'
 
 const Download = ({ data }) => {
   const [show, setShow] = useState(false)
@@ -11,7 +10,7 @@ const Download = ({ data }) => {
 
     const timeout = setTimeout(() => {
       setShow(true)
-    }, 500)
+    }, 1000)
 
     return () => clearTimeout(timeout)
   }, [data])
@@ -21,9 +20,7 @@ const Download = ({ data }) => {
       {show && (
         <PDFDownloadLink
           document={
-            <InvoicePage pdfMode={true} data={data}>
-              {/* <InvoiceHeader pdfMode={true} data={data} /> */}
-            </InvoicePage>
+            <InvoicePage pdfMode={true} data={data} />
           }
           fileName={`${data.clientName ? data.clientName.toLowerCase() + '-invoice' : 'invoice'}.pdf`}
           aria-label="Save PDF"

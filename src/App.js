@@ -11,7 +11,6 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import AboutUs from './components/AboutUs';
 import InvoicePage from './components/invoice/InvoicePage';
-import InvoiceHeader from './components/invoice/InvoiceHeader';
 import './components/invoice/scss/main.scss';
 
 function App() {
@@ -27,9 +26,7 @@ function App() {
             <Route path='/contact' component={Contact}/>
             <Route path='/invoice' component={InvoicePage}>
               <div className="app">
-                <InvoicePage>
-                  <InvoiceHeader />
-                </InvoicePage>
+                <InvoicePage />
               </div>
             </Route>
           </Switch>

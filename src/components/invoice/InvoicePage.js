@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { initialInvoice, initialProductLine } from './data/initialData'
 import EditableInput from './EditableInput'
 import EditableTextarea from './EditableTextarea'
-import InvoiceHeader from './InvoiceHeader'
 import Document from './Document'
 import Page from './Page'
 import View from './View'
 import Text from './Text'
 import { Font } from '@react-pdf/renderer'
 import Download from './DownloadPDF'
+import EditableCalendarInput from './EditableCalendarInput'
+import format from 'date-fns/format'
 
 Font.register({
   family: 'Nunito',
@@ -27,6 +28,17 @@ const InvoicePage = ({ data, pdfMode }) => {
   const [total, setTotal] = useState()
   const [tip, setTip] = useState()
   const [grandTotal, setGrandTotal] = useState()
+
+  const dateFormat = 'MMM dd, yyyy'
+  const invoiceDate = invoice.invoiceDate !== '' ? new Date(invoice.invoiceDate) : new Date()
+  const invoiceDueDate =
+  invoice.invoiceDueDate !== ''
+      ? new Date(invoice.invoiceDueDate)
+      : new Date(invoiceDate.valueOf())
+
+  if (invoice.invoiceDueDate === '') {
+      invoiceDueDate.setDate(invoiceDueDate.getDate() + 30)
+  }
 
   const handleChange = (name, value) => {
     if (name !== 'productLines') {
@@ -147,9 +159,138 @@ const InvoicePage = ({ data, pdfMode }) => {
   return (
     <Document pdfMode={pdfMode}>
       <Page className="invoice-wrapper" pdfMode={pdfMode}>
-        {!pdfMode && <Download data={invoice} />}
-        <InvoiceHeader data={invoice} pdfMode={pdfMode}>
-        </InvoiceHeader>
+        {/* {!pdfMode && <Download data={invoice} />} */}
+        <View className="flex" pdfMode={pdfMode}>
+          <View className="w-50" pdfMode={pdfMode}>
+              <Text className="fs-20 bold" pdfMode={pdfMode}>
+                  {invoice.companyName}
+              </Text>
+              <Text pdfMode={pdfMode}>
+                  {invoice.companyAddress}
+              </Text>
+              <Text pdfMode={pdfMode}>
+                  {invoice.companyAddress2}
+              </Text>
+              <Text pdfMode={pdfMode}>
+                  {invoice.companyCountry}
+              </Text>
+              <Text pdfMode={pdfMode}>
+                  {invoice.phoneNumber}
+              </Text>
+          </View>
+          <View className="w-50" pdfMode={pdfMode}>
+              <Text className="fs-45 right bold" pdfMode={pdfMode}>
+                  {invoice.title}
+              </Text>
+              <Text className="hst-number" pdfMode={pdfMode}>
+                  {invoice.corporation}
+              </Text>
+              <Text className="hst-number" pdfMode={pdfMode}>
+                  {invoice.hstNumber}
+              </Text>
+          </View>
+        </View>
+        <View className="flex customer-block" pdfMode={pdfMode}>
+            <View className="w-50" pdfMode={pdfMode}>
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-18" pdfMode={pdfMode}>
+                        <Text className="bold" pdfMode={pdfMode}>
+                            {invoice.customerNameLabel}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableInput
+                        placeholder="Type customer name"
+                        value={invoice.clientName}
+                        onChange={(value) => handleChange('clientName', value)}
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View>
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-18" pdfMode={pdfMode}>
+                        <Text className="bold" pdfMode={pdfMode}>
+                            {invoice.customerAddressLabel}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableInput
+                        placeholder="Type customer address"
+                        value={invoice.clientAddress}
+                        onChange={(value) => handleChange('clientAddress', value)}
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View>
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-18" pdfMode={pdfMode}>
+                        <Text pdfMode={pdfMode}>
+                            {invoice.customerAddressLabel2}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableInput
+                        placeholder="Type customer address"
+                        value={invoice.clientAddress2}
+                        onChange={(value) => handleChange('clientAddress2', value)}
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View>
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-18" pdfMode={pdfMode}>
+                        <Text className="bold" pdfMode={pdfMode}>
+                            {invoice.customerPhoneLabel}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableInput
+                        placeholder="Type customer phone number"
+                        value={invoice.phoneNumber2}
+                        onChange={(value) => handleChange('phoneNumber2', value)}
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View>
+            </View>
+            <View className="w-50" pdfMode={pdfMode}>
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-40" pdfMode={pdfMode}>
+                        <Text className="bold" pdfMode={pdfMode}>
+                            {invoice.invoiceTitleLabel}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableInput
+                        placeholder="Type invoice#"
+                        value={invoice.invoiceTitle}
+                        onChange={(value) => handleChange('invoiceTitle', value)}
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View>
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-40" pdfMode={pdfMode}>
+                        <Text className="bold" pdfMode={pdfMode}>
+                            {invoice.invoiceDateLabel}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableCalendarInput
+                        value={format(invoiceDate, dateFormat)}
+                        selected={invoiceDate}
+                        onChange={(date) =>
+                            handleChange(
+                            'invoiceDate',
+                            date && !Array.isArray(date) ? format(date, dateFormat) : ''
+                            )
+                        }
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View>
+            </View>
+        </View>
         <View className="i-mt-30 bg-dark flex" pdfMode={pdfMode}>
           <View className="w-18 i-p-4-8" pdfMode={pdfMode}>
             <Text className="white bold" pdfMode={pdfMode}>
@@ -190,6 +331,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                   placeholder="Enter item code"
                   value={productLine.code}
                   onChange={(value) => handleProductLineChange(i, 'code', value)}
+                  // onChange={(value) => memoHandleProductLineChange(i, 'code', value)}
                   pdfMode={pdfMode}
                 />
               </View>
@@ -200,6 +342,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                   placeholder="Enter item name/description"
                   value={productLine.description}
                   onChange={(value) => handleProductLineChange(i, 'description', value)}
+                  // onChange={(value) => memoHandleProductLineChange(i, 'description', value)}
                   pdfMode={pdfMode}
                 />
               </View>
@@ -208,6 +351,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                   className="dark right"
                   value={productLine.quantity}
                   onChange={(value) => handleProductLineChange(i, 'quantity', value)}
+                  // onChange={(value) => memoHandleProductLineChange(i, 'quantity', value)}
                   pdfMode={pdfMode}
                 />
               </View>
@@ -216,6 +360,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                   className="dark right"
                   value={productLine.rate}
                   onChange={(value) => handleProductLineChange(i, 'rate', value)}
+                  // onChange={(value) => memoHandleProductLineChange(i, 'rate', value)}
                   pdfMode={pdfMode}
                 />
               </View>
@@ -435,6 +580,7 @@ const InvoicePage = ({ data, pdfMode }) => {
         {/* <button>
           {!pdfMode && <Download data={invoice} />}
         </button> */}
+        {!pdfMode && <Download data={invoice} />}
       </Page>
     </Document>
   )
