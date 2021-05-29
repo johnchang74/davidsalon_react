@@ -161,10 +161,10 @@ const InvoicePage = ({ data, pdfMode }) => {
   useEffect(() => {
     const match = invoice.taxLabel.match(/(\d+)%/)
     const taxRate = match ? parseFloat(match[1]) : 0
-    const saleTax = subTotal ? (subTotal * taxRate) / 100 : 0
+    const saleTax = subTotal ? ((subTotal - discount) * taxRate) / 100 : 0
     const decimalSaleTax = roundToTwo(saleTax) 
     setSaleTax(decimalSaleTax)
-  }, [subTotal, invoice.taxLabel])
+  }, [subTotal, discount, invoice.taxLabel])
 
   useEffect(() => {
     const totalAmt = roundToTwo(subTotal + saleTax - discount)
