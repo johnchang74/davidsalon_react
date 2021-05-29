@@ -24,6 +24,7 @@ const InvoicePage = ({ data, pdfMode }) => {
   const [invoice, setInvoice] = useState(data ? { ...data } : { ...initialInvoice })
   const [subTotal, setSubTotal] = useState()
   const [discount, setDiscount] = useState()
+  const [discountPercent, setDiscountPercent] = useState('0')
   const [saleTax, setSaleTax] = useState()
   const [total, setTotal] = useState()
   const [tip, setTip] = useState()
@@ -56,6 +57,14 @@ const InvoicePage = ({ data, pdfMode }) => {
     let gAmt = total + amt
     newTip['initialGrandTotal'] = gAmt.toString()
     setInvoice(newTip)
+  }
+
+  const handleDiscountChange = (name, value) => {
+    const newDiscount = { ...invoice }
+    newDiscount[name] = value
+    let amt = roundToTwo(parseFloat(value))
+    setDiscount(amt)
+    setInvoice(newDiscount)
   }
 
   const handleProductLineChange = (index, name, value) => {
@@ -111,6 +120,11 @@ const InvoicePage = ({ data, pdfMode }) => {
     return +(Math.round(num + "e+2")  + "e-2");
   }
 
+  const resetInvoice = () => {
+    const clearInvoice = { ...initialInvoice }
+    setInvoice(clearInvoice)
+  }
+
   useEffect(() => {
     let subTotal = 0
 
@@ -128,10 +142,21 @@ const InvoicePage = ({ data, pdfMode }) => {
   useEffect(() => {
     const match = invoice.discountLabel.match(/(\d+)%/)
     const discountRate = match ? parseFloat(match[1]) : 0
-    const discount = subTotal ? (subTotal * discountRate) / 100 : 0
-    const decimalDiscount = roundToTwo(discount) 
+    const discountAmt = subTotal && discountRate ? (subTotal * discountRate) / 100 : 0
+    const decimalDiscount = roundToTwo(discountAmt)
     setDiscount(decimalDiscount)
-  }, [subTotal, invoice.discountLabel])
+    // console.log(discount)
+  }, [subTotal, invoice.discountLabel, discount])
+
+  useEffect(() => {
+    if (invoice.initialDiscountDollar !== '0.00') {
+      const discountDollar = parseFloat(invoice.initialDiscountDollar)
+      setDiscount(discountDollar)
+      const percent = subTotal && discount ? (discount / subTotal) * 100 : 0
+      let discountPercentLabel = 'Discount By (' + percent.toFixed(0) + '%)'
+      setDiscountPercent(discountPercentLabel)
+    }
+  }, [invoice.initialDiscountDollar, subTotal, discount])
 
   useEffect(() => {
     const match = invoice.taxLabel.match(/(\d+)%/)
@@ -144,7 +169,8 @@ const InvoicePage = ({ data, pdfMode }) => {
   useEffect(() => {
     const totalAmt = roundToTwo(subTotal + saleTax - discount)
     setTotal(totalAmt)
-  }, [subTotal, saleTax, discount, invoice.discountLabel, invoice.taxLabel])
+    setGrandTotal(totalAmt)
+  }, [subTotal, saleTax, discount])
 
   useEffect(() => {
     let tAmt = roundToTwo(parseFloat(invoice.initialTip.replace('$', '').replace(' ', '')))
@@ -407,18 +433,49 @@ const InvoicePage = ({ data, pdfMode }) => {
             </View>
             <View className="flex" pdfMode={pdfMode}>
               <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text pdfMode={pdfMode}>
+                  {invoice.discountDollarLabel}
+                </Text>
+              </View>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
                 <EditableInput
-                  value={invoice.discountLabel}
-                  onChange={(value) => handleChange('discountLabel', value)}
+                  value={invoice.initialDiscountDollar}
+                  className="tip-amount"
+                  onChange={(value) => handleDiscountChange('initialDiscountDollar', value)}
                   pdfMode={pdfMode}
                 />
               </View>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <Text className="right bold dark" pdfMode={pdfMode}>
-                  {discount?.toFixed(2)}
-                </Text>
-              </View>
             </View>
+
+            { invoice.initialDiscountDollar !== '0.00' ?
+              (<View className="flex" pdfMode={pdfMode}>
+                <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                  <Text className="bold" pdfMode={pdfMode}>
+                    {discountPercent}
+                  </Text>
+                </View>
+                <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                  <Text className="right bold dark" pdfMode={pdfMode}>
+                    {discount?.toFixed(2)}
+                  </Text>
+                </View>
+              </View>) :
+              (<View className="flex" pdfMode={pdfMode}>
+                <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                  <EditableInput
+                    value={invoice.discountLabel}
+                    onChange={(value) => handleChange('discountLabel', value)}
+                    pdfMode={pdfMode}
+                  />
+                </View>
+                <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                  <Text className="right bold dark" pdfMode={pdfMode}>
+                    {discount?.toFixed(2)}
+                  </Text>
+                </View>
+              </View>)
+            }
+            
             <View className="flex" pdfMode={pdfMode}>
               <View className="w-50 i-p-5" pdfMode={pdfMode}>
                 <Text pdfMode={pdfMode}>
@@ -570,17 +627,22 @@ const InvoicePage = ({ data, pdfMode }) => {
         </View>
 
         <View className="i-mt-20" pdfMode={pdfMode}>
-          <Text className="bold w-100" pdfMode={pdfMode}>
-            {invoice.notesLabel}
+          <Text className="bold w-100" rows={2} pdfMode={pdfMode}>
+            {invoice.memoLabel}
           </Text>
-          <Text className="w-100" rows={2} pdfMode={pdfMode}>
-            {invoice.notes}
+          <EditableTextarea
+            className="dark"
+            placeholder="Enter your memo"
+            value={invoice.initialMemo}
+            onChange={(value) => handleChange('initialMemo', value)}
+            pdfMode={pdfMode}
+          />
+          <Text className="bold w-100" pdfMode={pdfMode}>
+            {invoice.notesLabel + ': ' + invoice.notes}
           </Text>
         </View>
-        {/* <button>
-          {!pdfMode && <Download data={invoice} />}
-        </button> */}
         {!pdfMode && <Download data={invoice} />}
+        <a href="" class="invoice-reset-button" onClick={resetInvoice} title="Reset invoice" />
       </Page>
     </Document>
   )
