@@ -117,8 +117,28 @@ const styles = {
     fontWeight: 'bold',
   },
 
+  'fs-12': {
+    fontSize: '12px',
+  },
+
+  'fs-15': {
+    fontSize: '15px',
+  },
+
   'fs-20': {
     fontSize: '20px',
+  },
+
+  'fs-30': {
+    fontSize: '30px',
+  },
+
+  'fs-35': {
+    fontSize: '35px',
+  },
+
+  'fs-40': {
+    fontSize: '40px',
   },
 
   'fs-45': {

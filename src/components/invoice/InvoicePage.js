@@ -26,6 +26,7 @@ const InvoicePage = ({ data, pdfMode }) => {
   const [discount, setDiscount] = useState()
   const [discountPercent, setDiscountPercent] = useState('0')
   const [saleTax, setSaleTax] = useState()
+  const [preTotal, setPreTotal] = useState()
   const [total, setTotal] = useState()
   const [tip, setTip] = useState()
   const [grandTotal, setGrandTotal] = useState()
@@ -167,7 +168,9 @@ const InvoicePage = ({ data, pdfMode }) => {
   }, [subTotal, discount, invoice.taxLabel])
 
   useEffect(() => {
+    const preTotalAmt = roundToTwo(subTotal - discount)
     const totalAmt = roundToTwo(subTotal + saleTax - discount)
+    setPreTotal(preTotalAmt)
     setTotal(totalAmt)
     setGrandTotal(totalAmt)
   }, [subTotal, saleTax, discount])
@@ -188,7 +191,7 @@ const InvoicePage = ({ data, pdfMode }) => {
         {/* {!pdfMode && <Download data={invoice} />} */}
         <View className="flex" pdfMode={pdfMode}>
           <View className="w-50" pdfMode={pdfMode}>
-              <Text className="fs-20 bold" pdfMode={pdfMode}>
+              <Text className="fs-15 bold" pdfMode={pdfMode}>
                   {invoice.companyName}
               </Text>
               <Text pdfMode={pdfMode}>
@@ -205,7 +208,7 @@ const InvoicePage = ({ data, pdfMode }) => {
               </Text>
           </View>
           <View className="w-50" pdfMode={pdfMode}>
-              <Text className="fs-45 right bold" pdfMode={pdfMode}>
+              <Text className="fs-35 right bold" pdfMode={pdfMode}>
                   {invoice.title}
               </Text>
               <Text className="hst-number" pdfMode={pdfMode}>
@@ -476,6 +479,21 @@ const InvoicePage = ({ data, pdfMode }) => {
               </View>)
             }
             
+            <View className="flex bg-gray i-p-5" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text className="bold" pdfMode={pdfMode}>
+                  {invoice.afterTaxLabel}
+                </Text>
+              </View>
+              <View className="w-50 i-p-5 flex" pdfMode={pdfMode}>
+                <Text className="dark bold right i-ml-30" pdfMode={pdfMode}>
+                  {invoice.currency}
+                </Text>
+                <Text className="right bold dark w-auto" pdfMode={pdfMode}>
+                  {preTotal?.toFixed(2)}
+                </Text>
+              </View>
+            </View>
             <View className="flex" pdfMode={pdfMode}>
               <View className="w-50 i-p-5" pdfMode={pdfMode}>
                 <Text pdfMode={pdfMode}>
@@ -642,7 +660,8 @@ const InvoicePage = ({ data, pdfMode }) => {
           </Text>
         </View>
         {!pdfMode && <Download data={invoice} />}
-        <a href="" class="invoice-reset-button" onClick={resetInvoice} title="Reset invoice" />
+        <a href="/invoice" className="invoice-reset-button" onClick={resetInvoice} title="Reset invoice" alt=""> 
+        </a>
       </Page>
     </Document>
   )

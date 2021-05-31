@@ -37,7 +37,7 @@ const Download = ({ data }) => {
 
     const timeout = setTimeout(() => {
       setShow(true)
-    }, 2000)
+    }, 4500)
 
     return () => clearTimeout(timeout)
   }, [data])
