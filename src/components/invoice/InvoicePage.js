@@ -187,10 +187,10 @@ const InvoicePage = ({ data, pdfMode }) => {
 
   return (
     <Document pdfMode={pdfMode}>
-      <Page className="invoice-wrapper" pdfMode={pdfMode}>
+      <Page className="invoice-wrapper dark" pdfMode={pdfMode}>
         {/* {!pdfMode && <Download data={invoice} />} */}
         <View className="flex" pdfMode={pdfMode}>
-          <View className="w-50" pdfMode={pdfMode}>
+          <View className="w-50 dark" pdfMode={pdfMode}>
               <Text className="fs-15 bold" pdfMode={pdfMode}>
                   {invoice.companyName}
               </Text>
@@ -335,7 +335,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                 </View>
             </View>
         </View>
-        <View className="i-mt-30 bg-dark flex" pdfMode={pdfMode}>
+        <View className="i-mt-10 bg-dark flex" pdfMode={pdfMode}>
           <View className="w-18 i-p-4-8" pdfMode={pdfMode}>
             <Text className="white bold" pdfMode={pdfMode}>
               {invoice.productLineCode}
@@ -367,7 +367,7 @@ const InvoicePage = ({ data, pdfMode }) => {
           return pdfMode && productLine.description === '' ? (
             <Text key={i}></Text>
           ) : (
-            <View key={i} className="invoice-row flex" pdfMode={pdfMode}>
+            <View key={i} className="invoice-row dark flex" pdfMode={pdfMode}>
               <View className="w-18 i-p-4-8 i-pb-10" pdfMode={pdfMode}>
                 <EditableTextarea
                   className="dark"
@@ -427,7 +427,7 @@ const InvoicePage = ({ data, pdfMode }) => {
           )
         })}
 
-        <View className="flex" pdfMode={pdfMode}>
+        <View className="flex dark" pdfMode={pdfMode}>
           <View className="w-50 i-mt-10" pdfMode={pdfMode}>
             {!pdfMode && (
               <button className="link" onClick={handleAdd}>
@@ -435,6 +435,21 @@ const InvoicePage = ({ data, pdfMode }) => {
                 Add Line Item
               </button>
             )}
+            <View className="i-mt-20 dark" pdfMode={pdfMode}>
+              <Text className="bold w-100" rows={2} pdfMode={pdfMode}>
+                {invoice.memoLabel}
+              </Text>
+              <EditableTextarea
+                className="dark"
+                placeholder="Enter your memo"
+                value={invoice.initialMemo}
+                onChange={(value) => handleChange('initialMemo', value)}
+                pdfMode={pdfMode}
+              />
+              <Text className="bold w-100" pdfMode={pdfMode}>
+                {invoice.notesLabel + ': ' + invoice.notes}
+              </Text>
+            </View>
           </View>
           <View className="w-50 i-mt-20" pdfMode={pdfMode}>
             <View className="flex" pdfMode={pdfMode}>
@@ -659,7 +674,7 @@ const InvoicePage = ({ data, pdfMode }) => {
           </View>
         </View>
 
-        <View className="i-mt-20" pdfMode={pdfMode}>
+        {/* <View className="i-mt-20 dark" pdfMode={pdfMode}>
           <Text className="bold w-100" rows={2} pdfMode={pdfMode}>
             {invoice.memoLabel}
           </Text>
@@ -673,7 +688,7 @@ const InvoicePage = ({ data, pdfMode }) => {
           <Text className="bold w-100" pdfMode={pdfMode}>
             {invoice.notesLabel + ': ' + invoice.notes}
           </Text>
-        </View>
+        </View> */}
         {!pdfMode && <Download data={invoice} />}
         <a href="/invoice" className="invoice-reset-button" onClick={resetInvoice} title="Reset invoice" alt=""> 
         </a>

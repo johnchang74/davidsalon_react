@@ -46,7 +46,7 @@ export const initialInvoice = {
     //   rate: '100.00',
     // },
     { ...initialProductLine },
-    { ...initialProductLine },
+    // { ...initialProductLine },
   ],
   subTotalLabel: 'Sub Total',
   initialSubTotal: '0.00',
