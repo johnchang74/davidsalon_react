@@ -154,7 +154,19 @@ const styles = {
 
   span: {
     padding: '4px 12px 4px 0',
-  }
+  },
+
+  'hst-number': {
+    textAlign: 'right',
+  },
+  
+  'tip-amount': {
+    textAlign: 'right',
+  },
+  
+  'customer-block': {
+    paddingTop: '15px',
+  },
 }
 
 export default styles
