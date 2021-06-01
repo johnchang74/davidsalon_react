@@ -208,7 +208,7 @@ const InvoicePage = ({ data, pdfMode }) => {
               </Text>
           </View>
           <View className="w-50" pdfMode={pdfMode}>
-              <Text className="fs-35 right bold" pdfMode={pdfMode}>
+              <Text className="fs-30 right bold" pdfMode={pdfMode}>
                   {invoice.title}
               </Text>
               <Text className="hst-number" pdfMode={pdfMode}>
