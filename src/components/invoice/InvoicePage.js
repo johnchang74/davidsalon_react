@@ -318,6 +318,21 @@ const InvoicePage = ({ data, pdfMode }) => {
                         />
                     </View>
                 </View>
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-18" pdfMode={pdfMode}>
+                        <Text className="bold" pdfMode={pdfMode}>
+                            {invoice.customerEmailLabel}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableInput
+                        placeholder="Type customer email"
+                        value={invoice.customerEmail}
+                        onChange={(value) => handleChange('customerEmail', value)}
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View>
             </View>
         </View>
         <View className="i-mt-30 bg-dark flex" pdfMode={pdfMode}>
