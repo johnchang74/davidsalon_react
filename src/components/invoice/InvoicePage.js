@@ -109,10 +109,19 @@ const InvoicePage = ({ data, pdfMode }) => {
     setInvoice({ ...invoice, productLines })
   }
 
-  const calculateAmount = (quantity, rate) => {
+  const handleFreeAdd = () => {
+    const productLines = [...invoice.productLines, { ...initialProductLine, free: true }]
+    
+    setInvoice({ ...invoice, productLines })
+  }
+
+  const calculateAmount = (quantity, rate, free) => {
     const quantityNumber = parseFloat(quantity)
     const rateNumber = parseFloat(rate)
-    const amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
+    let amount = 0
+    if(!free) {
+      amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
+    }
 
     return amount.toFixed(2)
   }
@@ -130,10 +139,12 @@ const InvoicePage = ({ data, pdfMode }) => {
     let subTotal = 0
 
     invoice.productLines.forEach((productLine) => {
-      const quantityNumber = parseFloat(productLine.quantity)
-      const rateNumber = parseFloat(productLine.rate)
-      const amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
-
+      let amount = 0
+      if(!productLine.free) {
+        const quantityNumber = parseFloat(productLine.quantity)
+        const rateNumber = parseFloat(productLine.rate)
+        amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
+      }
       subTotal += amount
     })
 
@@ -217,10 +228,13 @@ const InvoicePage = ({ data, pdfMode }) => {
               <Text className="hst-number" pdfMode={pdfMode}>
                   {invoice.hstNumber}
               </Text>
+              <Text className="hst-number" pdfMode={pdfMode}>
+                  {invoice.companyWebsite}
+              </Text>
           </View>
         </View>
         <View className="flex customer-block" pdfMode={pdfMode}>
-            <View className="w-50" pdfMode={pdfMode}>
+            <View className="w-65" pdfMode={pdfMode}>
                 <View className="flex i-mb-5" pdfMode={pdfMode}>
                     <View className="w-18" pdfMode={pdfMode}>
                         <Text className="bold" pdfMode={pdfMode}>
@@ -242,7 +256,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                             {invoice.customerAddressLabel}
                         </Text>
                     </View>
-                    <View className="w-60" pdfMode={pdfMode}>
+                    <View className="w-80" pdfMode={pdfMode}>
                         <EditableInput
                         placeholder="Type customer address"
                         value={invoice.clientAddress}
@@ -251,7 +265,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                         />
                     </View>
                 </View>
-                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                {/* <View className="flex i-mb-5" pdfMode={pdfMode}>
                     <View className="w-18" pdfMode={pdfMode}>
                         <Text pdfMode={pdfMode}>
                             {invoice.customerAddressLabel2}
@@ -262,6 +276,21 @@ const InvoicePage = ({ data, pdfMode }) => {
                         placeholder="Type customer address"
                         value={invoice.clientAddress2}
                         onChange={(value) => handleChange('clientAddress2', value)}
+                        pdfMode={pdfMode}
+                        />
+                    </View>
+                </View> */}
+                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                    <View className="w-18" pdfMode={pdfMode}>
+                        <Text className="bold" pdfMode={pdfMode}>
+                            {invoice.customerEmailLabel}
+                        </Text>
+                    </View>
+                    <View className="w-60" pdfMode={pdfMode}>
+                        <EditableInput
+                        placeholder="Type customer email"
+                        value={invoice.customerEmail}
+                        onChange={(value) => handleChange('customerEmail', value)}
                         pdfMode={pdfMode}
                         />
                     </View>
@@ -282,7 +311,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                     </View>
                 </View>
             </View>
-            <View className="w-50" pdfMode={pdfMode}>
+            <View className="w-35" pdfMode={pdfMode}>
                 <View className="flex i-mb-5" pdfMode={pdfMode}>
                     <View className="w-40" pdfMode={pdfMode}>
                         <Text className="bold" pdfMode={pdfMode}>
@@ -318,7 +347,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                         />
                     </View>
                 </View>
-                <View className="flex i-mb-5" pdfMode={pdfMode}>
+                {/* <View className="flex i-mb-5" pdfMode={pdfMode}>
                     <View className="w-18" pdfMode={pdfMode}>
                         <Text className="bold" pdfMode={pdfMode}>
                             {invoice.customerEmailLabel}
@@ -332,7 +361,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                         pdfMode={pdfMode}
                         />
                     </View>
-                </View>
+                </View> */}
             </View>
         </View>
         <View className="i-mt-10 bg-dark flex" pdfMode={pdfMode}>
@@ -410,7 +439,7 @@ const InvoicePage = ({ data, pdfMode }) => {
               </View>
               <View className="w-18 i-p-4-8 i-pb-10" pdfMode={pdfMode}>
                 <Text className="dark right" pdfMode={pdfMode}>
-                  {calculateAmount(productLine.quantity, productLine.rate)}
+                  {calculateAmount(productLine.quantity, productLine.rate, productLine.free)}
                 </Text>
               </View>
               {!pdfMode && (
@@ -432,7 +461,13 @@ const InvoicePage = ({ data, pdfMode }) => {
             {!pdfMode && (
               <button className="link" onClick={handleAdd}>
                 <span className="icon icon-add bg-green mr-10"></span>
-                Add Line Item
+                Add Charged Item
+              </button>
+            )}
+            {!pdfMode && (
+              <button className="link" onClick={handleFreeAdd}>
+                <span className="icon icon-add bg-green mr-10"></span>
+                Add Free Item
               </button>
             )}
             <View className="i-mt-20 dark" pdfMode={pdfMode}>
@@ -450,6 +485,98 @@ const InvoicePage = ({ data, pdfMode }) => {
                 {invoice.notesLabel + ': ' + invoice.notes}
               </Text>
             </View>
+
+            <View className="flex" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text pdfMode={pdfMode}>
+                  {invoice.cashLabel}
+                </Text>
+              </View>
+              <View className="w-30 i-p-5" pdfMode={pdfMode}>
+                <EditableInput
+                  value={invoice.initialCash}
+                  className="tip-amount"
+                  onChange={(value) => handleChange('initialCash', value)}
+                  pdfMode={pdfMode}
+                />
+              </View>
+            </View>
+            <View className="flex" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text pdfMode={pdfMode}>
+                  {invoice.creditCardLabel}
+                </Text>
+              </View>
+              <View className="w-30 i-p-5" pdfMode={pdfMode}>
+                <EditableInput
+                  value={invoice.initialCC}
+                  className="tip-amount"
+                  onChange={(value) => handleChange('initialCC', value)}
+                  pdfMode={pdfMode}
+                />
+              </View>
+            </View>
+            <View className="flex" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text pdfMode={pdfMode}>
+                  {invoice.debitCardLabel}
+                </Text>
+              </View>
+              <View className="w-30 i-p-5" pdfMode={pdfMode}>
+                <EditableInput
+                  value={invoice.initialDC}
+                  className="tip-amount"
+                  onChange={(value) => handleChange('initialDC', value)}
+                  pdfMode={pdfMode}
+                />
+              </View>
+            </View>
+            <View className="flex" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text pdfMode={pdfMode}>
+                  {invoice.ePaymentLabel}
+                </Text>
+              </View>
+              <View className="w-30 i-p-5" pdfMode={pdfMode}>
+                <EditableInput
+                  value={invoice.initialEP}
+                  className="tip-amount"
+                  onChange={(value) => handleChange('initialEP', value)}
+                  pdfMode={pdfMode}
+                />
+              </View>
+            </View>
+            <View className="flex" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text pdfMode={pdfMode}>
+                  {invoice.giftCardLabel}
+                </Text>
+              </View>
+              <View className="w-30 i-p-5" pdfMode={pdfMode}>
+                <EditableInput
+                  value={invoice.initialGC}
+                  className="tip-amount"
+                  onChange={(value) => handleChange('initialGC', value)}
+                  pdfMode={pdfMode}
+                />
+              </View>
+            </View>
+            <View className="flex" pdfMode={pdfMode}>
+              <View className="w-50 i-p-5" pdfMode={pdfMode}>
+                <Text pdfMode={pdfMode}>
+                  {invoice.membershipCardLabel}
+                </Text>
+              </View>
+              <View className="w-30 i-p-5" pdfMode={pdfMode}>
+                <EditableInput
+                  value={invoice.initialMC}
+                  className="tip-amount"
+                  onChange={(value) => handleChange('initialMC', value)}
+                  pdfMode={pdfMode}
+                />
+              </View>
+            </View>
+
           </View>
           <View className="w-50 i-mt-20" pdfMode={pdfMode}>
             <View className="flex" pdfMode={pdfMode}>
@@ -581,7 +708,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                 </Text>
               </View>
             </View>
-            <View className="flex" pdfMode={pdfMode}>
+            {/* <View className="flex" pdfMode={pdfMode}>
               <View className="w-50 i-p-5" pdfMode={pdfMode}>
                 <Text pdfMode={pdfMode}>
                   {invoice.cashLabel}
@@ -670,7 +797,7 @@ const InvoicePage = ({ data, pdfMode }) => {
                   pdfMode={pdfMode}
                 />
               </View>
-            </View>
+            </View> */}
           </View>
         </View>
 

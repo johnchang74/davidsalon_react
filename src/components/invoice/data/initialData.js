@@ -5,6 +5,7 @@ export const initialProductLine = {
   description: '',
   quantity: '1',
   rate: '0.00',
+  free: false
 }
 
 export const initialInvoice = {
@@ -16,6 +17,7 @@ export const initialInvoice = {
   companyAddress2: 'Aurora, Ontario, Canada L4G 1M1',
   companyCountry: 'Email: davidkimsalondebeaute@gmail.com',
   phoneNumber: 'Phone: (905)726-4184',
+  companyWebsite: 'https://davidsalon.ca',
   billTo: 'Bill To:',
   customerNameLabel: 'Name: ',
   clientName: '',
