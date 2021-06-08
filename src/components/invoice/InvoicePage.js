@@ -10,6 +10,7 @@ import { Font } from '@react-pdf/renderer'
 import Download from './DownloadPDF'
 import EditableCalendarInput from './EditableCalendarInput'
 import format from 'date-fns/format'
+import { Checkmark } from 'react-checkmark'
 
 Font.register({
   family: 'Nunito',
@@ -30,6 +31,10 @@ const InvoicePage = ({ data, pdfMode }) => {
   const [total, setTotal] = useState()
   const [tip, setTip] = useState()
   const [grandTotal, setGrandTotal] = useState()
+  const [editMode, setEditMode] = useState({status: false, red: false});
+  const [editColor, setEditColor] = useState('');
+  const [editTitle, setEditTitle] = useState('Edit Amount');
+  // const [amount, setAmount] = useState('0.00');
 
   const dateFormat = 'MMM dd, yyyy'
   const invoiceDate = invoice.invoiceDate !== '' ? new Date(invoice.invoiceDate) : new Date()
@@ -75,6 +80,9 @@ const InvoicePage = ({ data, pdfMode }) => {
 
         if (name === 'description') {
           newProductLine[name] = value
+        } else if (name === 'amount') {
+          newProductLine[name] = (Number(value).toFixed(2)).toString()
+          newProductLine['edit'] = true
         } else {
           if (
             value[value.length - 1] === '.' ||
@@ -105,26 +113,15 @@ const InvoicePage = ({ data, pdfMode }) => {
 
   const handleAdd = () => {
     const productLines = [...invoice.productLines, { ...initialProductLine }]
-
+    setEditMode({status: false})
     setInvoice({ ...invoice, productLines })
   }
 
-  const handleFreeAdd = () => {
-    const productLines = [...invoice.productLines, { ...initialProductLine, free: true }]
-    
-    setInvoice({ ...invoice, productLines })
-  }
-
-  const calculateAmount = (quantity, rate, free) => {
-    const quantityNumber = parseFloat(quantity)
-    const rateNumber = parseFloat(rate)
-    let amount = 0
-    if(!free) {
-      amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
-    }
-
-    return amount.toFixed(2)
-  }
+  // const handleFreeAdd = () => {
+  //   const productLines = [...invoice.productLines, { ...initialProductLine, free: true }]
+  //   setEditMode({status: false})
+  //   setInvoice({ ...invoice, productLines })
+  // }
 
   const roundToTwo = (num) => {
     return +(Math.round(num + "e+2")  + "e-2");
@@ -132,24 +129,55 @@ const InvoicePage = ({ data, pdfMode }) => {
 
   const resetInvoice = () => {
     const clearInvoice = { ...initialInvoice }
+    setEditMode({status: false})
     setInvoice(clearInvoice)
+  }
+
+  const onEditToggle = (mode, color) => {
+      // console.log(mode + '|' + color)
+      setEditMode({status: mode, red: color})
+      if(color) {
+        setEditColor('red')
+        setEditTitle('Save Amount')
+      }
+      else {
+        setEditColor('')
+        setEditTitle('Edit Amount')
+      }
+  }
+
+  const calculateAmount = (quantity, rate, index) => {
+    const productLines = invoice.productLines.map((productLine, i) => {
+      if (i === index) {
+        const quantityNumber = parseFloat(quantity)
+        const rateNumber = parseFloat(rate)
+        const amountNormal = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
+        if(!productLine.edit) {
+          productLine['amount'] = Number(amountNormal).toFixed(2)
+        }
+      }
+      return { ...productLine }
+    })
+    // console.log(Number(productLines[index].amount).toFixed(2))
+    return Number(productLines[index].amount).toFixed(2)
   }
 
   useEffect(() => {
     let subTotal = 0
 
     invoice.productLines.forEach((productLine) => {
-      let amount = 0
-      if(!productLine.free) {
-        const quantityNumber = parseFloat(productLine.quantity)
-        const rateNumber = parseFloat(productLine.rate)
-        amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
+      let amountValue = parseFloat(productLine.amount)
+      const quantityNumber = parseFloat(productLine.quantity)
+      const rateNumber = parseFloat(productLine.rate)
+      let normalAmount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
+      if(!editMode.status && amountValue === normalAmount) {
+        amountValue = normalAmount
       }
-      subTotal += amount
+      subTotal += amountValue
     })
 
     setSubTotal(subTotal)
-  }, [invoice.productLines])
+  }, [invoice.productLines, editMode])
 
   useEffect(() => {
     const match = invoice.discountLabel.match(/(\d+)%/)
@@ -265,21 +293,6 @@ const InvoicePage = ({ data, pdfMode }) => {
                         />
                     </View>
                 </View>
-                {/* <View className="flex i-mb-5" pdfMode={pdfMode}>
-                    <View className="w-18" pdfMode={pdfMode}>
-                        <Text pdfMode={pdfMode}>
-                            {invoice.customerAddressLabel2}
-                        </Text>
-                    </View>
-                    <View className="w-60" pdfMode={pdfMode}>
-                        <EditableInput
-                        placeholder="Type customer address"
-                        value={invoice.clientAddress2}
-                        onChange={(value) => handleChange('clientAddress2', value)}
-                        pdfMode={pdfMode}
-                        />
-                    </View>
-                </View> */}
                 <View className="flex i-mb-5" pdfMode={pdfMode}>
                     <View className="w-18" pdfMode={pdfMode}>
                         <Text className="bold" pdfMode={pdfMode}>
@@ -347,21 +360,6 @@ const InvoicePage = ({ data, pdfMode }) => {
                         />
                     </View>
                 </View>
-                {/* <View className="flex i-mb-5" pdfMode={pdfMode}>
-                    <View className="w-18" pdfMode={pdfMode}>
-                        <Text className="bold" pdfMode={pdfMode}>
-                            {invoice.customerEmailLabel}
-                        </Text>
-                    </View>
-                    <View className="w-60" pdfMode={pdfMode}>
-                        <EditableInput
-                        placeholder="Type customer email"
-                        value={invoice.customerEmail}
-                        onChange={(value) => handleChange('customerEmail', value)}
-                        pdfMode={pdfMode}
-                        />
-                    </View>
-                </View> */}
             </View>
         </View>
         <View className="i-mt-10 bg-dark flex" pdfMode={pdfMode}>
@@ -388,6 +386,11 @@ const InvoicePage = ({ data, pdfMode }) => {
           <View className="w-18 i-p-4-8" pdfMode={pdfMode}>
             <Text className="white bold right" pdfMode={pdfMode}>
               {invoice.productLineQuantityAmount}
+            </Text>
+          </View>
+          <View className="w-7 i-p-4-8" pdfMode={pdfMode}>
+            <Text className="white bold right" pdfMode={pdfMode}>
+              {invoice.productLineAmountEditLabel}
             </Text>
           </View>
         </View>
@@ -439,8 +442,26 @@ const InvoicePage = ({ data, pdfMode }) => {
               </View>
               <View className="w-18 i-p-4-8 i-pb-10" pdfMode={pdfMode}>
                 <Text className="dark right" pdfMode={pdfMode}>
-                  {calculateAmount(productLine.quantity, productLine.rate, productLine.free)}
+                  {!pdfMode && !editMode.status
+                  ?  
+                    calculateAmount(productLine.quantity, productLine.rate, i)
+                  : 
+                    <EditableInput
+                      className="dark right"
+                      value={productLine.amount}
+                      onChange={(value) => handleProductLineChange(i, 'amount', value)}
+                      pdfMode={pdfMode}
+                    />
+                  }
                 </Text>
+              </View>
+              <View className="w-7 i-p-4-8 i-pb-10 center" pdfMode={pdfMode}>
+                <div
+                  onClick={() => onEditToggle(!editMode.status, !editMode.red)}
+                  title={editTitle}
+                >
+                  <Checkmark size='medium' color={editColor} />
+                </div>
               </View>
               {!pdfMode && (
                 <button
@@ -464,12 +485,12 @@ const InvoicePage = ({ data, pdfMode }) => {
                 Add Charged Item
               </button>
             )}
-            {!pdfMode && (
+            {/* {!pdfMode && (
               <button className="link" onClick={handleFreeAdd}>
                 <span className="icon icon-add bg-green mr-10"></span>
                 Add Free Item
               </button>
-            )}
+            )} */}
             <View className="i-mt-20 dark" pdfMode={pdfMode}>
               <Text className="bold w-100" rows={2} pdfMode={pdfMode}>
                 {invoice.memoLabel}
@@ -708,114 +729,8 @@ const InvoicePage = ({ data, pdfMode }) => {
                 </Text>
               </View>
             </View>
-            {/* <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <Text pdfMode={pdfMode}>
-                  {invoice.cashLabel}
-                </Text>
-              </View>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.initialCash}
-                  className="tip-amount"
-                  onChange={(value) => handleChange('initialCash', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-            </View>
-            <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <Text pdfMode={pdfMode}>
-                  {invoice.creditCardLabel}
-                </Text>
-              </View>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.initialCC}
-                  className="tip-amount"
-                  onChange={(value) => handleChange('initialCC', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-            </View>
-            <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <Text pdfMode={pdfMode}>
-                  {invoice.debitCardLabel}
-                </Text>
-              </View>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.initialDC}
-                  className="tip-amount"
-                  onChange={(value) => handleChange('initialDC', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-            </View>
-            <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <Text pdfMode={pdfMode}>
-                  {invoice.ePaymentLabel}
-                </Text>
-              </View>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.initialEP}
-                  className="tip-amount"
-                  onChange={(value) => handleChange('initialEP', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-            </View>
-            <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <Text pdfMode={pdfMode}>
-                  {invoice.giftCardLabel}
-                </Text>
-              </View>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.initialGC}
-                  className="tip-amount"
-                  onChange={(value) => handleChange('initialGC', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-            </View>
-            <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <Text pdfMode={pdfMode}>
-                  {invoice.membershipCardLabel}
-                </Text>
-              </View>
-              <View className="w-50 i-p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.initialMC}
-                  className="tip-amount"
-                  onChange={(value) => handleChange('initialMC', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-            </View> */}
           </View>
         </View>
-
-        {/* <View className="i-mt-20 dark" pdfMode={pdfMode}>
-          <Text className="bold w-100" rows={2} pdfMode={pdfMode}>
-            {invoice.memoLabel}
-          </Text>
-          <EditableTextarea
-            className="dark"
-            placeholder="Enter your memo"
-            value={invoice.initialMemo}
-            onChange={(value) => handleChange('initialMemo', value)}
-            pdfMode={pdfMode}
-          />
-          <Text className="bold w-100" pdfMode={pdfMode}>
-            {invoice.notesLabel + ': ' + invoice.notes}
-          </Text>
-        </View> */}
         {!pdfMode && <Download data={invoice} />}
         <a href="/invoice" className="invoice-reset-button" onClick={resetInvoice} title="Reset invoice" alt=""> 
         </a>

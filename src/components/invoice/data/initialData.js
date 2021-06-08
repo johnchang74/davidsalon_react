@@ -5,7 +5,8 @@ export const initialProductLine = {
   description: '',
   quantity: '1',
   rate: '0.00',
-  free: false
+  amount: '0.00', 
+  edit: false
 }
 
 export const initialInvoice = {
@@ -41,6 +42,8 @@ export const initialInvoice = {
   productLineQuantity: 'Qty',
   productLineQuantityRate: 'Rate',
   productLineQuantityAmount: 'Amount',
+  productLineAmountEditLabel: 'Edit',
+  productLineEditColor: '',
   productLines: [
     // {
     //   description: 'Brochure Design',
