@@ -31,10 +31,6 @@ const InvoicePage = ({ data, pdfMode }) => {
   const [total, setTotal] = useState()
   const [tip, setTip] = useState()
   const [grandTotal, setGrandTotal] = useState()
-  const [editMode, setEditMode] = useState({status: false, red: false});
-  const [editColor, setEditColor] = useState('');
-  const [editTitle, setEditTitle] = useState('Edit Amount');
-  // const [amount, setAmount] = useState('0.00');
 
   const dateFormat = 'MMM dd, yyyy'
   const invoiceDate = invoice.invoiceDate !== '' ? new Date(invoice.invoiceDate) : new Date()
@@ -101,7 +97,6 @@ const InvoicePage = ({ data, pdfMode }) => {
 
       return { ...productLine }
     })
-
     setInvoice({ ...invoice, productLines })
   }
 
@@ -113,7 +108,7 @@ const InvoicePage = ({ data, pdfMode }) => {
 
   const handleAdd = () => {
     const productLines = [...invoice.productLines, { ...initialProductLine }]
-    setEditMode({status: false})
+    // setEditMode({status: false})
     setInvoice({ ...invoice, productLines })
   }
 
@@ -129,21 +124,29 @@ const InvoicePage = ({ data, pdfMode }) => {
 
   const resetInvoice = () => {
     const clearInvoice = { ...initialInvoice }
-    setEditMode({status: false})
+    // setEditMode({status: false})
     setInvoice(clearInvoice)
   }
 
-  const onEditToggle = (mode, color) => {
-      // console.log(mode + '|' + color)
-      setEditMode({status: mode, red: color})
-      if(color) {
-        setEditColor('red')
-        setEditTitle('Save Amount')
+  const onEditToggle = (index) => {
+    const productLines = invoice.productLines.map((productLine, i) => {
+      if (i === index) {
+        productLine['edit'] = !productLine.edit
+        if(productLine.color === '') {
+          productLine['color'] = 'red'
+        } else {
+          productLine['color'] = ''
+          productLine['editCount'] = (parseInt(productLine.editCount) + 1).toString()
+        }
+        if(productLine['title'] === 'Edit Amount') {
+          productLine['title'] = 'Save Amount'
+        } else {
+          productLine['title'] = 'Edit Amount'
+        }
       }
-      else {
-        setEditColor('')
-        setEditTitle('Edit Amount')
-      }
+      return { ...productLine }
+    })
+    setInvoice({ ...invoice, productLines })
   }
 
   const calculateAmount = (quantity, rate, index) => {
@@ -152,7 +155,8 @@ const InvoicePage = ({ data, pdfMode }) => {
         const quantityNumber = parseFloat(quantity)
         const rateNumber = parseFloat(rate)
         const amountNormal = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
-        if(!productLine.edit) {
+        // console.log(productLine.edit)
+        if(!productLine.edit && parseInt(productLine.editCount) === 0) {
           productLine['amount'] = Number(amountNormal).toFixed(2)
         }
       }
@@ -170,14 +174,14 @@ const InvoicePage = ({ data, pdfMode }) => {
       const quantityNumber = parseFloat(productLine.quantity)
       const rateNumber = parseFloat(productLine.rate)
       let normalAmount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
-      if(!editMode.status && amountValue === normalAmount) {
+      if(!productLine.status && amountValue === normalAmount) {
         amountValue = normalAmount
       }
       subTotal += amountValue
     })
 
     setSubTotal(subTotal)
-  }, [invoice.productLines, editMode])
+  }, [invoice.productLines])
 
   useEffect(() => {
     const match = invoice.discountLabel.match(/(\d+)%/)
@@ -442,7 +446,7 @@ const InvoicePage = ({ data, pdfMode }) => {
               </View>
               <View className="w-18 i-p-4-8 i-pb-10" pdfMode={pdfMode}>
                 <Text className="dark right" pdfMode={pdfMode}>
-                  {!pdfMode && !editMode.status
+                  {!pdfMode && !productLine.edit
                   ?  
                     calculateAmount(productLine.quantity, productLine.rate, i)
                   : 
@@ -457,10 +461,10 @@ const InvoicePage = ({ data, pdfMode }) => {
               </View>
               <View className="w-7 i-p-4-8 i-pb-10 center" pdfMode={pdfMode}>
                 <div
-                  onClick={() => onEditToggle(!editMode.status, !editMode.red)}
-                  title={editTitle}
+                  onClick={() => onEditToggle(i)}
+                  title={productLine.title}
                 >
-                  <Checkmark size='medium' color={editColor} />
+                  <Checkmark size='medium' color={productLine.color} />
                 </div>
               </View>
               {!pdfMode && (

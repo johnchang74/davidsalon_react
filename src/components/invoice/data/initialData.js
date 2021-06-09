@@ -6,7 +6,10 @@ export const initialProductLine = {
   quantity: '1',
   rate: '0.00',
   amount: '0.00', 
-  edit: false
+  edit: false,
+  color: '',
+  title: 'Edit Amount',
+  editCount: '0'
 }
 
 export const initialInvoice = {
