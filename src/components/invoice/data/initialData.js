@@ -9,7 +9,9 @@ export const initialProductLine = {
   edit: false,
   color: '',
   title: 'Edit Amount',
-  editCount: '0'
+  editCount: '0',
+  discountPercent: '0',
+  discountDollar: '0.00'
 }
 
 export const initialInvoice = {
@@ -46,6 +48,8 @@ export const initialInvoice = {
   productLineQuantityRate: 'Rate',
   productLineQuantityAmount: 'Amount',
   productLineAmountEditLabel: 'Edit',
+  productLineDiscountPercentLabel: 'DS%',
+  productLineDiscountDollarsLabel: 'DS$',
   productLineEditColor: '',
   productLines: [
     // {
@@ -61,7 +65,7 @@ export const initialInvoice = {
   discountPercent: '0',
   discountLabel: 'Discount By (0%)',
   initialDiscount: '0.00',
-  discountDollarLabel: 'Discount By $',
+  discountDollarLabel: 'Discount Total',
   initialDiscountDollar: '0.00',
   taxLabel: 'Sale Tax (13%)',
   initialTax: '0.00',

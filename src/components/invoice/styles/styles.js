@@ -93,6 +93,14 @@ const styles = {
     width: '18%',
   },
 
+  'w-10': {
+    width: '10%',
+  },
+
+  'w-12': {
+    width: '12%',
+  },
+
   row: {
     borderBottom: `1px solid ${colorGray}`,
   },
@@ -115,6 +123,10 @@ const styles = {
 
   'i-mb-5': {
     marginBottom: '5px',
+  },
+
+  'i-p-4-4': {
+    padding: '4px 4px',
   },
 
   'i-p-4-8': {
