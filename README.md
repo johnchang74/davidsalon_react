@@ -86,3 +86,5 @@ i  hosting[david-kim-aveda-salon]: releasing new version...
 ✔  hosting[david-kim-aveda-salon]: release complete
 
 ✔  Deploy complete!
+
+vscode superuser mode for current user: sudo chown -R $USER:$USER .

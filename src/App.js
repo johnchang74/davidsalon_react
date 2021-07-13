@@ -1,5 +1,5 @@
-import React from 'react';
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'; 
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router,Route,Switch } from 'react-router-dom'; 
 import Home from './components/Home';
 import Topbar from './components/partial/Topbar';
 import Footer from './components/partial/Footer';
@@ -12,8 +12,18 @@ import Contact from './components/Contact';
 import AboutUs from './components/AboutUs';
 import InvoicePage from './components/invoice/InvoicePage';
 import './components/invoice/scss/main.scss';
+import apikeys from './apikeys';
+import ReactGA from 'react-ga';
+
+const trackingId = apikeys.GA_TRACKING_ID; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
 
 function App() {
+  useEffect( () => {
+    // This line will trigger on a route change
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
+
   return (
     <div className="main_photos">
       <Router>
