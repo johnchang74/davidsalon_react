@@ -1,0 +1,28 @@
+// import { ProductLine, Invoice } from './types'
+export const initialHeader = {
+  title: 'Invoice',
+  companyName: 'David Kim Salon de Beaute',
+  corporation: '2620189 Ontario Inc.',
+  name: 'David J.Kim',
+  companyAddress: '5171 Yonge St. Unit 2',
+  companyAddress2: 'Aurora, Ontario L4G 1M1',
+  companyCountry: 'Canada',
+  phoneNumber: 'Phone: (905) 726-4184',
+  billTo: 'Bill To:',
+  customerNameLabel: 'Name: ',
+  clientName: '',
+  customerAddressLabel: 'Address: ',
+  clientAddress: '',
+  customerAddressLabel2: '',
+  clientAddress2: '',
+  customerPhoneLabel: 'Phone: ',
+  phoneNumber2: '',
+  clientCountry: 'Canada',
+  invoiceTitleLabel: 'Invoice#',
+  invoiceTitle: '',
+  invoiceDateLabel: 'Invoice Date',
+  invoiceDate: '',
+  invoiceDueDateLabel: 'Due Date',
+  invoiceDueDate: '',
+  hstNumber: 'HST 77003 2514 RT0001'
+}
