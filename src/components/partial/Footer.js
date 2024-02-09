@@ -19,7 +19,7 @@ class Footer extends Component{
                                                 <p>Monday<span className="tab-space"></span>11am - 6pm</p>
                                             </div>
                                             <div className="col-md-12">
-                                                <p>Tueday<span className="tab-space"></span>11am - 6pm</p>
+                                                <p>Tuesday<span className="tab-space"></span>11am - 6pm</p>
                                             </div>
                                             <div className="col-md-12">
                                                 <p>Wednesday<span className="tab-space"></span>11am - 6pm</p>
