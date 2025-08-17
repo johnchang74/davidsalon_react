@@ -1,6 +1,8 @@
 Project Console: https://console.firebase.google.com/project/david-kim-aveda-salon/overview
 Hosting URL: https://david-kim-aveda-salon.web.app
-root@grace-ThinkPad-T431s:/opt/davidsalon_react# firebase init
+
+davidsalon_react on  invoice [?] via  v20.11.1 on ☁️ gospelway128@gmail.com took 41s
+❯ firebase init hosting
 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -10,23 +12,19 @@ root@grace-ThinkPad-T431s:/opt/davidsalon_react# firebase init
 
 You're about to initialize a Firebase project in this directory:
 
-  /opt/davidsalon_react
+/Users/johnchang/dev/davidsalon_react
 
 Before we get started, keep in mind:
 
-  * You are currently outside your home directory
-  * You are initializing in an existing Firebase project directory
-
-? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm y
-our choices. Hosting: Configure and deploy Firebase Hosting sites
+- You are initializing within an existing Firebase project directory
 
 === Project Setup
 
 First, let's associate this project directory with a Firebase project.
-You can create multiple project aliases by running firebase use --add, 
+You can create multiple project aliases by running firebase use --add,
 but for now we'll just set up a default project.
 
-i  .firebaserc already has a default project, using david-kim-aveda-salon.
+i Using project david-kim-aveda-salon (david-kim-aveda-salon)
 
 === Hosting Setup
 
@@ -34,19 +32,21 @@ Your public directory is the folder (relative to your project directory) that
 will contain Hosting assets to be uploaded with firebase deploy. If you
 have a build process for your assets, use your build's output directory.
 
-? What do you want to use as your public directory? build
-? Configure as a single-page app (rewrite all urls to /index.html)? Yes
-? Set up automatic builds and deploys with GitHub? No
-? File build/index.html already exists. Overwrite? Yes
-✔  Wrote build/index.html
+✔ What do you want to use as your public directory? build
+✔ Configure as a single-page app (rewrite all urls to /index.html)? Yes
+✔ Set up automatic builds and deploys with GitHub? No
+✔ File build/index.html already exists. Overwrite? Yes
+✔ Wrote build/index.html
 
-i  Writing configuration info to firebase.json...
-i  Writing project information to .firebaserc...
+✔ Wrote configuration info to firebase.json
+✔ Wrote project information to .firebaserc
 
-✔  Firebase initialization complete!
-root@grace-ThinkPad-T431s:/opt/davidsalon_react# npm run build
+✔ Firebase initialization complete!
 
-> my-app@0.1.0 build
+davidsalon_react on  invoice [?] via  v20.11.1 on ☁️ gospelway128@gmail.com took 2m19s
+❯ npm run build
+
+> my-app@1.0 build
 > react-scripts build
 
 Creating an optimized production build...
@@ -54,10 +54,12 @@ Compiled successfully.
 
 File sizes after gzip:
 
-  56.26 KB  build/static/js/2.35e87f9c.chunk.js
-  5.12 KB   build/static/js/main.1c3054a9.chunk.js
-  772 B     build/static/js/runtime-main.83c3e0c4.js
-  278 B     build/static/css/main.5ecd60fb.chunk.css
+575.5 kB build/static/js/main.17af15af.js
+4.42 kB build/static/css/main.d6e11521.css
+
+The bundle size is significantly larger than recommended.
+Consider reducing it with code splitting: https://goo.gl/9VhYWB
+You can also analyze the project dependencies: https://goo.gl/LeUzfb
 
 The project was built assuming it is hosted at /.
 You can control this with the homepage field in your package.json.
@@ -65,26 +67,28 @@ You can control this with the homepage field in your package.json.
 The build folder is ready to be deployed.
 You may serve it with a static server:
 
-  yarn global add serve
-  serve -s build
+yarn global add serve
+serve -s build
 
 Find out more about deployment here:
 
-  bit.ly/CRA-deploy
+https://cra.link/deployment
 
-root@grace-ThinkPad-T431s:/opt/davidsalon_react# firebase deploy
+davidsalon_react on  invoice [?] via  v20.11.1 on ☁️ gospelway128@gmail.com took 26s
+❯ firebase deploy
 
 === Deploying to 'david-kim-aveda-salon'...
 
-i  deploying hosting
-i  hosting[david-kim-aveda-salon]: beginning deploy...
-i  hosting[david-kim-aveda-salon]: found 50 files in build
-✔  hosting[david-kim-aveda-salon]: file upload complete
-i  hosting[david-kim-aveda-salon]: finalizing version...
-✔  hosting[david-kim-aveda-salon]: version finalized
-i  hosting[david-kim-aveda-salon]: releasing new version...
-✔  hosting[david-kim-aveda-salon]: release complete
+i deploying hosting
+i hosting[david-kim-aveda-salon]: beginning deploy...
+i hosting[david-kim-aveda-salon]: found 70 files in build
+✔ hosting[david-kim-aveda-salon]: file upload complete
+i hosting[david-kim-aveda-salon]: finalizing version...
+✔ hosting[david-kim-aveda-salon]: version finalized
+i hosting[david-kim-aveda-salon]: releasing new version...
+✔ hosting[david-kim-aveda-salon]: release complete
 
-✔  Deploy complete!
+✔ Deploy complete!
 
-vscode superuser mode for current user: sudo chown -R $USER:$USER .
+Project Console: https://console.firebase.google.com/project/david-kim-aveda-salon/overview
+Hosting URL: https://david-kim-aveda-salon.web.app
