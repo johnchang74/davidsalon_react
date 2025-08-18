@@ -141,61 +141,67 @@ class Contact extends Component {
   render() {
     return (
       <div>
-        {/* <section className="inner-page-banner" id="home">
+        {/* <section class="inner-page-banner" id="home">
                 </section> */}
-        <div className="breadcrumb-agile">
-          <ol className="breadcrumb mb-0">
-            <li className="breadcrumb-item">
+        <div class="breadcrumb-agile">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item">
               <Link to="/">Home</Link>
             </li>
-            <li className="breadcrumb-item active" aria-current="page">
+            <li class="breadcrumb-item active" aria-current="page">
               Book Appointment
             </li>
           </ol>
         </div>
-        <section className="content-info py-5">
-          <div className="container py-md-5">
-            <div className="text-center px-lg-5">
-              <h4 className="heading text-center mb-3 mb-sm-5">
-                <div className="row">
-                  <div className="col-md-6">
+        <section class="content-info py-5">
+          <div class="container py-md-5">
+            <div class="text-center px-lg-5">
+              <h4 class="heading text-center mb-3 mb-sm-5">
+                <div class="row">
+                  <div class="col-md-6">
                     <img
-                      className="sanity"
+                      class="sanity"
                       src="/assets/images/sanitization_note_v1.jpg"
                       alt=" "
                     ></img>
-                    <div className="blank-space"></div>
+                    <div class="blank-space"></div>
                   </div>
-                  <div className="col-md-6">
+                  <div class="col-md-6">
                     <img
-                      className="sanity"
+                      class="sanity"
                       src="/assets/images/sanity_shop_v1.jpg"
                       alt=" "
                     ></img>
                   </div>
                 </div>
-                <div className="blank-space"></div>
+                <div class="blank-space"></div>
                 <p>
                   No walk-in please. All of our services are provided by
                   appointment ONLY.
                 </p>
-                <div className="blank-space"></div>
+                <div class="blank-space"></div>
+                {/* <div class="wish-block">
+                                    <p class="wish-note">For <a href="https://www.wish.com/local">Wish</a> pickup customers, 
+                                    please pick up your package only from Monday to Wednesday between 11AM and 2PM.</p>
+                                </div> */}
+                <div class="blank-space"></div>
+                <p>Please comply with COVID-19 rules for any visit.</p>
               </h4>
             </div>
-            <div className="contact-w3pvt-form mt-5">
+            <div class="contact-w3pvt-form mt-5">
               <form
                 action="#"
-                className="w3layouts-contact-fm"
+                class="w3layouts-contact-fm"
                 method="post"
                 onSubmit={this.onSubmit}
                 onReset={this.onReset}
               >
-                <div className="row">
-                  <div className="col-lg-6">
-                    <div className="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
                       <label>Name</label>
                       <input
-                        className="form-control"
+                        class="form-control"
                         name="username"
                         type="text"
                         size="30"
@@ -207,10 +213,10 @@ class Contact extends Component {
                         {this.state.errors["username"]}
                       </span>
                     </div>
-                    <div className="form-group">
+                    <div class="form-group">
                       <label>Email</label>
                       <input
-                        className="form-control"
+                        class="form-control"
                         name="email"
                         type="text"
                         size="30"
@@ -222,10 +228,10 @@ class Contact extends Component {
                         {this.state.errors["email"]}
                       </span>
                     </div>
-                    <div className="form-group">
+                    <div class="form-group">
                       <label>Phone</label>
                       <input
-                        className="form-control"
+                        class="form-control"
                         name="phone"
                         type="text"
                         size="30"
@@ -238,11 +244,11 @@ class Contact extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="col-lg-6">
-                    <div className="form-group">
+                  <div class="col-lg-6">
+                    <div class="form-group">
                       <label>Write Message</label>
                       <textarea
-                        className="form-control"
+                        class="form-control"
                         name="message"
                         type="text"
                         size="1000"
@@ -255,12 +261,12 @@ class Contact extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="form-group mx-auto mt-3">
-                    <div className="row">
-                      <button type="submit" className="btn submit submit-align">
+                  <div class="form-group mx-auto mt-3">
+                    <div class="row">
+                      <button type="submit" class="btn submit submit-align">
                         Submit
                       </button>
-                      <button type="reset" className="btn submit reset-align">
+                      <button type="reset" class="btn submit reset-align">
                         Reset
                       </button>
                     </div>
@@ -270,11 +276,11 @@ class Contact extends Component {
             </div>
           </div>
         </section>
-        <div className="map-w3layouts">
+        <div class="map-w3layouts">
           <iframe
             title="david_kim_salon"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2870.1403790470686!2d-79.46917088463071!3d43.9978238380955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ad32c386bf919%3A0xd5f23c8a43b55de9!2sDavid%20Kim%20Salon%20de%20Beaut%C3%A9!5e0!3m2!1sen!2sca!4v1617919364205!5m2!1sen!2sca"
-            allowFullScreen=""
+            allowfullscreen=""
           ></iframe>
         </div>
       </div>

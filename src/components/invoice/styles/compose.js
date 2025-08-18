@@ -1,18 +1,18 @@
 //import ReactPDF from '@react-pdf/renderer'
-import styles from "./styles";
+import styles from './styles'
 
 const compose = (classes) => {
-  const css = {};
+  const css = {}
 
-  const classesArray = classes.replace(/\s+/g, " ").split(" ");
+  const classesArray = classes.replace(/\s+/g, ' ').split(' ')
 
   classesArray.forEach((className) => {
-    if (!typeof styles[className]) {
-      Object.assign(css, styles[className]);
+    if (typeof styles[className] !== undefined) {
+      Object.assign(css, styles[className])
     }
-  });
+  })
 
-  return css;
-};
+  return css
+}
 
-export default compose;
+export default compose
