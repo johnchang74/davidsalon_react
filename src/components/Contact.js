@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import apikeys from "../apikeys";
 import emailjs from "emailjs-com";
+import env from "react-dotenv";
+
+const serviceID = env.EMAILJS_SERVICE_ID;
+const templateID = env.EMAILJS_TEMPLATE_ID;
+const userID = env.EMAILJS_USER_ID;
 
 class Contact extends Component {
   constructor(props) {
@@ -23,22 +27,15 @@ class Contact extends Component {
   onSubmit = (e) => {
     e.preventDefault(); // Prevents default refresh by the browser
     if (this.handleValidation()) {
-      emailjs
-        .sendForm(
-          apikeys.SERVICE_ID,
-          apikeys.TEMPLATE_ID,
-          e.target,
-          apikeys.USER_ID
-        )
-        .then(
-          (result) => {
-            alert("Message Sent", result.text);
-            this.onReset();
-          },
-          (error) => {
-            alert("An error occured, Plese try again", error.text);
-          }
-        );
+      emailjs.sendForm(serviceID, templateID, e.target, userID).then(
+        (result) => {
+          alert("Message Sent", result.text);
+          this.onReset();
+        },
+        (error) => {
+          alert("An error occured, Plese try again", error.text);
+        }
+      );
     } else {
       alert(
         "Your request is invalid!: please ensure to enter your name, email and appointment date and time that you wish."
@@ -139,6 +136,9 @@ class Contact extends Component {
   }
 
   render() {
+    console.log(`service id:`, process.env.SERVICE_ID);
+    console.log(`template id:`, process.env.TEMPLATE_ID);
+    console.log(`user id:`, process.env.USER_ID);
     return (
       <div>
         {/* <section class="inner-page-banner" id="home">
