@@ -1175,7 +1175,7 @@ h4.leave-w3ls {
 .single-w3pvt-page img {
     border-radius: 4px;
     -webkit-border-radius: 4px;
-    -o- border-radius: 4px;
+    -o-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
 }
@@ -1470,6 +1470,13 @@ h3.w3pvt_title {
 
 .last-w3ls-contact a {
     color: #fff;
+}
+
+.store-location {
+    font-size: small;
+    color:#999;
+    font-family: monospace;
+    line-height: 0.5rem;
 }
 
 .w3ls-icons li {

@@ -13,69 +13,143 @@ class Footer extends Component {
                 <div className="footer-w3pvt">
                   <h3 className="mb-3 w3pvt_title">Opening Hours</h3>
                   <hr />
-                  <ul className="list-info-w3pvt last-w3ls-contact mt-lg-4">
-                    <div className="row">
-                      <div className="col-md-12">
-                        <p>
-                          Monday<span className="tab-space"></span>10am - 7pm
-                        </p>
+                  <div>
+                    <span className="store-location">Aurora location:</span>
+                    <ul className="list-info-w3pvt last-w3ls-contact">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <p>
+                            Monday<span className="tab-space"></span>10am - 7pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Tuesday<span className="tab-space"></span>11am - 6pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Wednesday<span className="tab-space"></span>10am -
+                            7pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Thursday<span className="tab-space"></span>1pm -7pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Friday<span className="tab-space"></span>10am - 7pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Saturday<span className="tab-space"></span>10am -
+                            7pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Sunday<span className="tab-space"></span>1pm - 7pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>Only by appointment</p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>Curbside pick-up available</p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>Gift Cards available</p>
+                        </div>
                       </div>
-                      <div className="col-md-12">
-                        <p>
-                          Tuesday<span className="tab-space"></span>Closed
-                        </p>
+                    </ul>
+                  </div>
+                  <div className="mt-4">
+                    <span className="store-location">Vaughan location:</span>
+                    <ul className="list-info-w3pvt last-w3ls-contact">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <p>
+                            Monday<span className="tab-space"></span>10am - 9pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Tuesday<span className="tab-space"></span>10am - 9pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Wednesday<span className="tab-space"></span>10am -
+                            9pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Thursday<span className="tab-space"></span>10am -
+                            9pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Friday<span className="tab-space"></span>10am - 9pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Saturday<span className="tab-space"></span>9am - 9pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>
+                            Sunday<span className="tab-space"></span>11am - 7pm
+                          </p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>Only by appointment</p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>Curbside pick-up available</p>
+                        </div>
+                        <div className="col-md-12">
+                          <p>Gift Cards available</p>
+                        </div>
                       </div>
-                      <div className="col-md-12">
-                        <p>
-                          Wednesday<span className="tab-space"></span>10am - 7pm
-                        </p>
-                      </div>
-                      <div className="col-md-12">
-                        <p>
-                          Thursday<span className="tab-space"></span>1pm -7pm
-                        </p>
-                      </div>
-                      <div className="col-md-12">
-                        <p>
-                          Friday<span className="tab-space"></span>10am - 7pm
-                        </p>
-                      </div>
-                      <div className="col-md-12">
-                        <p>
-                          Saturday<span className="tab-space"></span>10am - 7pm
-                        </p>
-                      </div>
-                      <div className="col-md-12">
-                        <p>
-                          Sunday<span className="tab-space"></span>1pm - 7pm
-                        </p>
-                      </div>
-                      <div className="col-md-12">
-                        <p>Only by appointment</p>
-                      </div>
-                      <div className="col-md-12">
-                        <p>Curbside pick-up available</p>
-                      </div>
-                      <div className="col-md-12">
-                        <p>Gift Cards available</p>
-                      </div>
-                    </div>
-                  </ul>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div className="col-lg-4 col-md-6 mt-lg-0 mt-5">
                 <div className="footer-w3pvt">
                   <h3 className="mb-3 w3pvt_title">Welcome</h3>
                   <hr />
-                  <div className="last-w3ls-contact my-2">
-                    <p>+1 905 726 4184</p>
+                  <div>
+                    <span className="store-location">Aurora location:</span>
+                    <div className="last-w3ls-contact">
+                      <p>+1 905 726 4184</p>
+                    </div>
+                    <div className="last-w3ls-contact">
+                      <p>
+                        #2-15171 Yonge Street,
+                        <br />
+                        Aurora, Ontario L4G 1M1
+                      </p>
+                    </div>
                   </div>
-                  <div className="last-w3ls-contact">
-                    <p>
-                      #2-15171 Yonge Street,
-                      <br />
-                      Aurora, Ontario L4G 1M1
-                    </p>
+                  <div className="mt-5">
+                    <span className="store-location">Vaughan location:</span>
+                    <div className="last-w3ls-contact">
+                      <p>+1 905 726 4184</p>
+                    </div>
+                    <div className="last-w3ls-contact">
+                      <p>
+                        #104A-1 Bass Pro Mills Drive
+                        <br />
+                        Concord, Ontario L4K 5W4
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
