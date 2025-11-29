@@ -189,6 +189,8 @@ div.carousel-images {
 div.landing-image-item {
     height: 70vh;
     margin-top: 8vh;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .landing-image {
