@@ -139,6 +139,13 @@ p.sub-para {
     line-height: 1.15em;
 }
 
+.top_bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 .slider-info p {
     color: #fff;
     font-size: 14px;
@@ -162,6 +169,11 @@ div.img_box_container {
     padding: 20px;
 }
 
+div.carousel-images {
+    display: flex;
+    justify-content: center;
+}
+
 /* div.img_box {
     background: black;
     width: 33.33%;
@@ -174,28 +186,23 @@ div.img_box_container {
     }
 } */
 
-div.landing-image1-item {
+div.landing-image-item {
+    height: 70vh;
+    margin-top: 8vh;
+}
+
+.landing-image {
     height: 70vh;
 }
 
-.landing-image1 {
+.landing-david-image {
     height: 70vh;
+    width: 45vh;
 }
 
-div.landing-image2-item {
+.landing-salon-image {
     height: 70vh;
-}
-
-.landing-image2 {
-    height: 70vh;
-}
-
-div.landing-image3-item {
-    height: 70vh;
-}
-
-.landing-image3 {
-    height: 70vh;
+    width: 55vh;
 }
 
 /* //text slider */
@@ -2186,4 +2193,26 @@ div.wish-block {
     /* background-position: center;
     justify-content: center; */
     border: 4px solid red;
+}
+
+div.join-team {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    color: white;
+}
+
+.join-team-title {
+    font-weight: bold;
+}
+
+div.job-role {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 10px;
 }

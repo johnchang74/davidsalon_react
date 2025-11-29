@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
+import JoinTeam from "./JoinTeam";
 
 class Footer extends Component {
   render() {
@@ -235,6 +236,7 @@ class Footer extends Component {
                       </a>
                     </li>
                   </ul>
+                  <JoinTeam />
                 </div>
                 <div className="move-top text-right">
                   <a href={window.location.href} className="move-top">

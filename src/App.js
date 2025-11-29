@@ -24,18 +24,20 @@ function App() {
     <div className="main_photos">
       <Router>
         <Topbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/aboutus" component={AboutUs} />
-          <Route path="/services" component={Services} />
-          <Route path="/products" component={Products} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/invoice" component={InvoicePage}>
-            <div className="app">
-              <InvoicePage />
-            </div>
-          </Route>
-        </Switch>
+        <div className="mt-20">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/aboutus" component={AboutUs} />
+            <Route path="/services" component={Services} />
+            <Route path="/products" component={Products} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/invoice" component={InvoicePage}>
+              <div className="app">
+                <InvoicePage />
+              </div>
+            </Route>
+          </Switch>
+        </div>
         <Footer />
       </Router>
     </div>
