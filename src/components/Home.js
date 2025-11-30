@@ -40,7 +40,7 @@ class Home extends Component {
               <div>
                 <img
                   className="landing-image"
-                  src="/assets/images/aveda_shop_2025.jpg"
+                  src="/assets/images/aveda_shop_2025_v2.jpg"
                   alt="First slide"
                 />
               </div>
@@ -143,7 +143,7 @@ class Home extends Component {
               <div>
                 <img
                   className="landing-image-narrow"
-                  src="/assets/images/aveda_shop_narrow_2025.jpg"
+                  src="/assets/images/aveda_shop_narrow_2025_v2.jpg"
                   alt="First slide"
                 />
               </div>
