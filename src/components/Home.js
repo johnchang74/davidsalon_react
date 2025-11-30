@@ -40,15 +40,17 @@ class Home extends Component {
               <div>
                 <img
                   className="landing-image"
-                  src="/assets/images/invanti_aveda_product_v2.jpg"
+                  src="/assets/images/aveda_shop_2025.jpg"
                   alt="First slide"
                 />
-                <img
-                  className="landing-image"
-                  src="/assets/images/aveda_poster_v1.jpg"
-                  alt="Second slide"
-                />
               </div>
+              <Carousel.Caption>
+                <h3 className="text-white">GIFT A SHINE MIRACLE</h3>
+                <p className="text-white">
+                  Miraculous Oil High-Shine Hair Concentrate smooths and
+                  illuminates each strand for flawless shine.
+                </p>
+              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="landing-image-item">
               <div>
@@ -140,11 +142,18 @@ class Home extends Component {
             <Carousel.Item className="landing-image-item">
               <div>
                 <img
-                  className="landing-image"
-                  src="/assets/images/invanti_aveda_product_v2.jpg"
+                  className="landing-image-narrow"
+                  src="/assets/images/aveda_shop_narrow_2025.jpg"
                   alt="First slide"
                 />
               </div>
+              <Carousel.Caption>
+                <h3 className="text-white">GIFT A SHINE MIRACLE</h3>
+                <p className="text-white">
+                  Miraculous Oil High-Shine Hair Concentrate smooths and
+                  illuminates each strand for flawless shine.
+                </p>
+              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="landing-image-item">
               <div>

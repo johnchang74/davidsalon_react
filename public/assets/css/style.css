@@ -197,6 +197,11 @@ div.landing-image-item {
     height: 70vh;
 }
 
+.landing-image-narrow {
+    height: 70vh;
+    width: 80vh;
+}
+
 .landing-david-image {
     height: 70vh;
     width: 45vh;
