@@ -136,13 +136,8 @@ class Contact extends Component {
   }
 
   render() {
-    console.log(`service id:`, process.env.SERVICE_ID);
-    console.log(`template id:`, process.env.TEMPLATE_ID);
-    console.log(`user id:`, process.env.USER_ID);
     return (
       <div>
-        {/* <section class="inner-page-banner" id="home">
-                </section> */}
         <div class="breadcrumb-agile">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item">
@@ -180,8 +175,12 @@ class Contact extends Component {
                   appointment ONLY.
                 </p>
               </h4>
+              <span className="sub-tittle text-center font-italic font-weight-light">
+                This form is to request an appointment for Aurora location.
+              </span>
             </div>
-            <div class="contact-w3pvt-form mt-5">
+
+            <div className="contact-w3pvt-form mt-3">
               <form
                 action="#"
                 class="w3layouts-contact-fm"

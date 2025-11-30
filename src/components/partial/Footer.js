@@ -142,7 +142,10 @@ class Footer extends Component {
                   <div className="mt-5">
                     <span className="store-location">Vaughan location:</span>
                     <div className="last-w3ls-contact">
-                      <p>+1 905 726 4184</p>
+                      <p>+1 905 738 8976</p>
+                    </div>
+                    <div className="last-w3ls-contact">
+                      <p>vaughan@fiorio.com</p>
                     </div>
                     <div className="last-w3ls-contact">
                       <p>
