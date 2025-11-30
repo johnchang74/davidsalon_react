@@ -67,11 +67,6 @@ class Contact extends Component {
     let errors = {};
     let formIsValid = true;
 
-    // console.log(name_value === '');
-    // console.log(email_value === '');
-    // console.log(phone_value === '');
-    // console.log(message_text === '');
-
     //Name
     if (name_value === "") {
       formIsValid = false;
