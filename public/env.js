@@ -50,7 +50,7 @@ window.env = {
   "HOME": "/Users/johnchang",
   "VSCODE_GIT_ASKPASS_MAIN": "/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js",
   "npm_config_cache": "/Users/johnchang/.npm",
-  "STARSHIP_SESSION_KEY": "5387162122154932",
+  "STARSHIP_SESSION_KEY": "3059126302275901",
   "LESS": "-R",
   "LOGNAME": "johnchang",
   "npm_lifecycle_script": "react-dotenv && react-scripts build",
