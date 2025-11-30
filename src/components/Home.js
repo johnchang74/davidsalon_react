@@ -33,7 +33,7 @@ class Home extends Component {
               />
               <img
                 className="landing-image"
-                src="/assets/images/invanti_aveda_product_v2.jpg"
+                src="/assets/images/davidsalon_hair1.jpg"
                 alt="First slide"
               />
             </div>
@@ -47,7 +47,7 @@ class Home extends Component {
               />
               <img
                 className="landing-image"
-                src="/assets/images/invanti_aveda_product_v2.jpg"
+                src="/assets/images/davidsalon_hair2.jpg"
                 alt="First slide"
               />
             </div>
@@ -61,7 +61,7 @@ class Home extends Component {
               />
               <img
                 className="landing-image"
-                src="/assets/images/invanti_aveda_product_v2.jpg"
+                src="/assets/images/davidsalon_hair3.jpg"
                 alt="First slide"
               />
             </div>
@@ -75,7 +75,7 @@ class Home extends Component {
               />
               <img
                 className="landing-image"
-                src="/assets/images/invanti_aveda_product_v2.jpg"
+                src="/assets/images/davidsalon_hair4.jpg"
                 alt="First slide"
               />
             </div>
@@ -89,7 +89,21 @@ class Home extends Component {
               />
               <img
                 className="landing-image"
-                src="/assets/images/invanti_aveda_product_v2.jpg"
+                src="/assets/images/davidsalon_hair5.jpg"
+                alt="First slide"
+              />
+            </div>
+          </Carousel.Item>
+          <Carousel.Item className="landing-image-item">
+            <div>
+              <img
+                className="landing-salon-image"
+                src="/assets/images/davidsalon_flower.jpg"
+                alt="Third slide"
+              />
+              <img
+                className="landing-image"
+                src="/assets/images/davidsalon_aveda_poster.jpg"
                 alt="First slide"
               />
             </div>
